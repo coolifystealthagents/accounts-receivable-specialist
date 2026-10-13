@@ -1,0 +1,192 @@
+{
+  "site": "AccountsReceivableSpecialist",
+  "canonicalDomain": "https://accountsreceivablespecialist.com",
+  "repository": "coolifystealthagents/accounts-receivable-specialist",
+  "branch": "main",
+  "baseSha": "33b77a902f4b3ba909cba224c4261e22bc30e8d3",
+  "publicationDate": "2026-10-13",
+  "counts": {
+    "blog": 12,
+    "research": 5,
+    "total": 17
+  },
+  "systems": {
+    "blog": {
+      "loader": "lib/october13BlogPosts.ts",
+      "route": "app/blog/[slug]/page.tsx",
+      "index": "app/blog/page.tsx"
+    },
+    "research": {
+      "loader": "lib/october13ResearchPosts.ts",
+      "route": "app/research/[slug]/page.tsx",
+      "index": "app/research/page.tsx"
+    }
+  },
+  "registryPaths": [
+    "lib/october13BlogPosts.ts",
+    "lib/october13ResearchPosts.ts",
+    "lib/content.ts"
+  ],
+  "sidebarPaths": [
+    "app/blog/[slug]/page.tsx",
+    "components/ResearchSidebar.tsx"
+  ],
+  "sitemapPaths": [
+    "app/sitemap.ts"
+  ],
+  "items": [
+    {
+      "section": "Blog",
+      "slug": "partial-payment-allocation-request",
+      "title": "Validate Partial Payment Allocation Requests",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/partial-payment-allocation-request.svg",
+      "route": "/blog/partial-payment-allocation-request"
+    },
+    {
+      "section": "Blog",
+      "slug": "short-pay-deduction-evidence-routing",
+      "title": "Route Short-Pay Deductions With Evidence",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/short-pay-deduction-evidence-routing.svg",
+      "route": "/blog/short-pay-deduction-evidence-routing"
+    },
+    {
+      "section": "Blog",
+      "slug": "invoice-recipient-change-control",
+      "title": "Control Invoice Recipient Change Requests",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/invoice-recipient-change-control.svg",
+      "route": "/blog/invoice-recipient-change-control"
+    },
+    {
+      "section": "Blog",
+      "slug": "lockbox-file-bank-reconciliation",
+      "title": "Reconcile Lockbox Files to Bank Activity",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/lockbox-file-bank-reconciliation.svg",
+      "route": "/blog/lockbox-file-bank-reconciliation"
+    },
+    {
+      "section": "Blog",
+      "slug": "duplicate-payment-candidate-review",
+      "title": "Review Duplicate Payment Candidates Before Action",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/duplicate-payment-candidate-review.svg",
+      "route": "/blog/duplicate-payment-candidate-review"
+    },
+    {
+      "section": "Blog",
+      "slug": "collections-contact-preference-register",
+      "title": "Document Collections Contact Preferences With Scope",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/collections-contact-preference-register.svg",
+      "route": "/blog/collections-contact-preference-register"
+    },
+    {
+      "section": "Blog",
+      "slug": "sales-tax-invoice-question-escalation",
+      "title": "Escalate Sales Tax Invoice Questions to Qualified Owners",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/sales-tax-invoice-question-escalation.svg",
+      "route": "/blog/sales-tax-invoice-question-escalation"
+    },
+    {
+      "section": "Blog",
+      "slug": "credit-balance-aging-ownership",
+      "title": "Track Credit Balance Aging With Named Owners",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/credit-balance-aging-ownership.svg",
+      "route": "/blog/credit-balance-aging-ownership"
+    },
+    {
+      "section": "Blog",
+      "slug": "missing-purchase-order-reference-recovery",
+      "title": "Recover Missing Purchase Order References Before Billing",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/missing-purchase-order-reference-recovery.svg",
+      "route": "/blog/missing-purchase-order-reference-recovery"
+    },
+    {
+      "section": "Blog",
+      "slug": "customer-portal-invoice-status-reconciliation",
+      "title": "Reconcile Customer Portal Invoice Status to Internal Records",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/customer-portal-invoice-status-reconciliation.svg",
+      "route": "/blog/customer-portal-invoice-status-reconciliation"
+    },
+    {
+      "section": "Blog",
+      "slug": "dunning-hold-approval-history",
+      "title": "Preserve Approval History for Dunning Holds",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/dunning-hold-approval-history.svg",
+      "route": "/blog/dunning-hold-approval-history"
+    },
+    {
+      "section": "Blog",
+      "slug": "acquired-customer-balance-handoff",
+      "title": "Hand Off Acquired Customer Balances With Lineage",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/acquired-customer-balance-handoff.svg",
+      "route": "/blog/acquired-customer-balance-handoff"
+    },
+    {
+      "section": "Research",
+      "slug": "partial-payment-allocation-repeatability",
+      "title": "Partial Payment Allocation Decision Repeatability",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/partial-payment-allocation-repeatability.svg",
+      "route": "/research/partial-payment-allocation-repeatability"
+    },
+    {
+      "section": "Research",
+      "slug": "short-pay-deduction-code-agreement",
+      "title": "Short-Pay Deduction Reason Code Agreement",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/short-pay-deduction-code-agreement.svg",
+      "route": "/research/short-pay-deduction-code-agreement"
+    },
+    {
+      "section": "Research",
+      "slug": "lockbox-reconciliation-completeness",
+      "title": "Lockbox Import Reconciliation Completeness",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/lockbox-reconciliation-completeness.svg",
+      "route": "/research/lockbox-reconciliation-completeness"
+    },
+    {
+      "section": "Research",
+      "slug": "invoice-recipient-change-verification-reliability",
+      "title": "Invoice Recipient Change Verification Reliability",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/invoice-recipient-change-verification-reliability.svg",
+      "route": "/research/invoice-recipient-change-verification-reliability"
+    },
+    {
+      "section": "Research",
+      "slug": "credit-balance-owner-assignment-timeliness",
+      "title": "Credit Balance Owner Assignment Timeliness",
+      "publicationDate": "2026-10-13",
+      "sourcePath": "lib/october13ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-13/credit-balance-owner-assignment-timeliness.svg",
+      "route": "/research/credit-balance-owner-assignment-timeliness"
+    }
+  ]
+}
