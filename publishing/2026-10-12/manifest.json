@@ -1,0 +1,189 @@
+{
+  "site": "AccountsReceivableSpecialist",
+  "canonicalDomain": "https://accountsreceivablespecialist.com",
+  "repository": "coolifystealthagents/accounts-receivable-specialist",
+  "branch": "main",
+  "baseSha": "a807f1466b3a7fa2c2bb0678ff7da6572a93e68b",
+  "publicationDate": "2026-10-12",
+  "counts": {
+    "blog": 12,
+    "research": 5,
+    "total": 17
+  },
+  "systems": {
+    "blog": {
+      "loader": "lib/october12BlogPosts.ts",
+      "route": "app/blog/[slug]/page.tsx",
+      "index": "app/blog/page.tsx"
+    },
+    "research": {
+      "loader": "lib/october12ResearchPosts.ts",
+      "route": "app/research/[slug]/page.tsx",
+      "index": "app/research/page.tsx"
+    }
+  },
+  "registryPaths": [
+    "lib/october12BlogPosts.ts",
+    "lib/october12ResearchPosts.ts",
+    "lib/content.ts"
+  ],
+  "sidebarPaths": [
+    "app/blog/[slug]/page.tsx",
+    "components/ResearchSidebar.tsx"
+  ],
+  "items": [
+    {
+      "section": "Blog",
+      "slug": "invoice-source-to-bill-reconciliation",
+      "title": "Reconcile Invoice Drafts to Approved Billing Sources",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/invoice-source-to-bill-reconciliation.svg",
+      "route": "/blog/invoice-source-to-bill-reconciliation"
+    },
+    {
+      "section": "Blog",
+      "slug": "failed-invoice-delivery-recovery",
+      "title": "Recover Failed Invoice Deliveries With Evidence",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/failed-invoice-delivery-recovery.svg",
+      "route": "/blog/failed-invoice-delivery-recovery"
+    },
+    {
+      "section": "Blog",
+      "slug": "remittance-evidence-cash-application",
+      "title": "Attach Remittance Evidence Before Cash Application Review",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/remittance-evidence-cash-application.svg",
+      "route": "/blog/remittance-evidence-cash-application"
+    },
+    {
+      "section": "Blog",
+      "slug": "unapplied-cash-exception-aging",
+      "title": "Run an Aging Queue for Unapplied Cash Exceptions",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/unapplied-cash-exception-aging.svg",
+      "route": "/blog/unapplied-cash-exception-aging"
+    },
+    {
+      "section": "Blog",
+      "slug": "promise-to-pay-commitment-log",
+      "title": "Keep Promise to Pay Commitments Verbatim and Reviewable",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/promise-to-pay-commitment-log.svg",
+      "route": "/blog/promise-to-pay-commitment-log"
+    },
+    {
+      "section": "Blog",
+      "slug": "customer-dispute-evidence-packet",
+      "title": "Build a Customer Dispute Evidence Packet",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/customer-dispute-evidence-packet.svg",
+      "route": "/blog/customer-dispute-evidence-packet"
+    },
+    {
+      "section": "Blog",
+      "slug": "credit-memo-approval-lineage",
+      "title": "Preserve Approval Lineage for Credit Memos",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/credit-memo-approval-lineage.svg",
+      "route": "/blog/credit-memo-approval-lineage"
+    },
+    {
+      "section": "Blog",
+      "slug": "customer-billing-master-change",
+      "title": "Verify Customer Billing Master Changes Independently",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/customer-billing-master-change.svg",
+      "route": "/blog/customer-billing-master-change"
+    },
+    {
+      "section": "Blog",
+      "slug": "aging-report-account-owner-control",
+      "title": "Assign an Account Owner to Every Aging Exception",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/aging-report-account-owner-control.svg",
+      "route": "/blog/aging-report-account-owner-control"
+    },
+    {
+      "section": "Blog",
+      "slug": "collections-message-version-register",
+      "title": "Version Approved Collections Messages Before Use",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/collections-message-version-register.svg",
+      "route": "/blog/collections-message-version-register"
+    },
+    {
+      "section": "Blog",
+      "slug": "customer-overpayment-refund-handoff",
+      "title": "Create a Controlled Overpayment and Refund Handoff",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/customer-overpayment-refund-handoff.svg",
+      "route": "/blog/customer-overpayment-refund-handoff"
+    },
+    {
+      "section": "Blog",
+      "slug": "period-close-receivables-handoff",
+      "title": "Close the Receivables Period With an Exception Handoff",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12BlogPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/period-close-receivables-handoff.svg",
+      "route": "/blog/period-close-receivables-handoff"
+    },
+    {
+      "section": "Research",
+      "slug": "invoice-delivery-evidence-completeness-study",
+      "title": "Completeness of Evidence for Invoice Delivery",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/invoice-delivery-evidence-completeness-study.svg",
+      "route": "/research/invoice-delivery-evidence-completeness-study"
+    },
+    {
+      "section": "Research",
+      "slug": "cash-application-reviewer-agreement-study",
+      "title": "Reviewer Agreement in Cash Application Proposals",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/cash-application-reviewer-agreement-study.svg",
+      "route": "/research/cash-application-reviewer-agreement-study"
+    },
+    {
+      "section": "Research",
+      "slug": "promise-to-pay-status-reliability-study",
+      "title": "Reliability of Promise to Pay Statuses",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/promise-to-pay-status-reliability-study.svg",
+      "route": "/research/promise-to-pay-status-reliability-study"
+    },
+    {
+      "section": "Research",
+      "slug": "dispute-packet-first-review-completeness-study",
+      "title": "First Review Completeness of Customer Dispute Packets",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/dispute-packet-first-review-completeness-study.svg",
+      "route": "/research/dispute-packet-first-review-completeness-study"
+    },
+    {
+      "section": "Research",
+      "slug": "aging-report-data-lineage-study",
+      "title": "Reproducibility of Aging Report Data Lineage",
+      "publicationDate": "2026-10-12",
+      "sourcePath": "lib/october12ResearchPosts.ts",
+      "thumbnailPath": "public/thumbnails/october-12/aging-report-data-lineage-study.svg",
+      "route": "/research/aging-report-data-lineage-study"
+    }
+  ]
+}
