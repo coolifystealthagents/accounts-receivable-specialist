@@ -23,19 +23,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = researchBySlug(slug);
   if (!post) return {};
   const image = post.thumbnail!;
+  const description = `Proposed protocol for ${post.title.toLowerCase()}, defining evidence, workflow boundaries, and review steps without claiming completed findings.`;
   return {
     title: post.title,
-    description: post.summary,
+    description,
     alternates: { canonical: `/research/${post.slug}` },
     openGraph: {
       type: 'article',
       title: post.title,
-      description: post.summary,
+      description,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       images: [{ url: image, alt: post.title }],
     },
-    twitter: { card: 'summary_large_image', title: post.title, description: post.summary, images: [image] },
+    twitter: { card: 'summary_large_image', title: post.title, description, images: [image] },
   };
 }
 

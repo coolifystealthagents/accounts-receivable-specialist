@@ -17,7 +17,7 @@ export default function ServicesPage() {
       <div className="service-hero-image"><Image src="/hero.png" alt="Accounts receivable specialist reviewing a controlled workflow" fill priority sizes="(max-width: 800px) 100vw, 42vw" /></div>
     </header>
     <section className="content-wrap prose">
-      <h2>A service should describe an operating lane—not promise an outcome</h2>
+      <h2>A service should describe an operating lane, not promise an outcome</h2>
       <p>Every engagement is configured around your systems, policies, access controls, and approval chain. Specialists can prepare records, organize supporting evidence, communicate from approved playbooks, document responses, and route exceptions. Authorized internal owners keep responsibility for accounting judgments, credit decisions, refunds, write offs, bank control, legal or tax advice, and final approval.</p>
       <h2>Accounts receivable support services</h2>
       <div className="service-grid">{site.services.map((service, index) => <article className="service-card" key={service.slug}><span className="card-index">0{index + 1}</span><h3>{service.name}</h3><p>{service.short}</p><Link href={`/services/${service.slug}`}>Review scope and boundaries →</Link></article>)}</div>
