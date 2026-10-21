@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return <html lang="en" data-design={site.design}><body style={{ '--primary': site.primary, '--secondary': site.secondary, '--accent': site.accent, '--canvas': site.canvas, '--ink': site.ink, '--display': site.displayFont, '--body': site.bodyFont } as React.CSSProperties}>
     <a className="skip-link" href="#main-content">Skip to main content</a>
-    <Header />{children}<Footer />
+    <Header /><div id="main-content" tabIndex={-1}>{children}</div><Footer />
     <Script id="acr-tracker-config" strategy="beforeInteractive">{`window.ACR_TRACKER_CONFIG={siteId:'${site.siteId}',endpoint:'/ingest/track',debug:false};`}</Script>
     <Script src="https://acrtracking.stealthagents.us/v1/tracker.js" strategy="afterInteractive" />
   </body></html>;

@@ -935,7 +935,13 @@ const defaultArticleImage = '/article-ledger.svg';
 for (const post of blogPosts) post.thumbnail ||= defaultArticleImage;
 for (const post of researchPosts) {
   post.thumbnail ||= defaultArticleImage;
-  post.sections ||= protocolSections(post);
+  // Every record in this collection is a study design, including the original
+  // records that already provide their own detailed protocol sections.
+  // Status is independent of whether section content needed backfilling.
+  post.isProposedProtocol = true;
+  if (!post.sections) {
+    post.sections = protocolSections(post);
+  }
   post.readTime ||= '8 min read';
 }
 

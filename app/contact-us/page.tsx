@@ -15,7 +15,7 @@ const faqs = [
 ];
 export default function ContactPage() {
   const schema = { '@context': 'https://schema.org', '@type': 'ContactPage', name: `Contact ${site.name}`, url: `https://${site.domain}/contact-us`, description: 'Accounts receivable staffing consultation.' };
-  return <main id="main-content" className="contact-page">
+  return <main className="contact-page">
     <section className="contact-first">
       <div className="contact-intro">
         <p className="eyebrow">Receivables staffing consultation</p>

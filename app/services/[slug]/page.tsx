@@ -22,7 +22,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   if (!service) notFound();
   const related = service.related.map(serviceBySlug).filter(Boolean);
   const schema = { '@context': 'https://schema.org', '@type': 'Service', name: service.name, description: service.short, provider: { '@type': 'Organization', name: site.name, url: `https://${site.domain}` }, areaServed: 'Worldwide' };
-  return <main id="main-content">
+  return <main>
     <header className="service-hero">
       <div><p className="eyebrow">Managed receivables support</p><h1>{service.name}</h1><p className="lede">{service.short}</p><p><strong>Designed for:</strong> {service.audience}</p><Link className="button primary" href="/contact-us">Discuss this workflow</Link></div>
       <div className="service-hero-image"><Image src={site.heroImage} alt={site.heroAlt} fill priority sizes="(max-width: 800px) 100vw, 42vw" /></div>

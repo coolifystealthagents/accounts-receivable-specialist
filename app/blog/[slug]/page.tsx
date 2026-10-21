@@ -1,4 +1,121 @@
-import type {Metadata} from 'next';import Image from 'next/image';import Link from 'next/link';import {notFound} from 'next/navigation';import {blogPosts,blogBySlug} from '@/lib/content';import {site} from '@/lib/site';
-export function generateStaticParams(){return blogPosts.map(({slug})=>({slug}))}const displayDate=(value:string)=>new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(`${value}T00:00:00Z`));
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const{slug}=await params;const post=blogBySlug(slug);return post?{title:post.title,description:post.description,alternates:{canonical:`/blog/${post.slug}`},openGraph:{type:'article',title:post.title,description:post.description,images:post.thumbnail?[post.thumbnail]:undefined}}:{}}
-export default async function Page({params}:{params:Promise<{slug:string}>}){const{slug}=await params;const post=blogBySlug(slug);if(!post)notFound();const related=blogPosts.filter(x=>x.slug!==post.slug).slice(0,3);return <main><header className="page-hero"><p className="eyebrow">Home / Blog / {post.category}</p><h1>{post.title}</h1><p>{post.description}</p><p className="meta">{site.name} Editorial Team · Published <time dateTime={post.publishedAt}>{displayDate(post.publishedAt)}</time> · {post.readTime}</p>{post.thumbnail&&<Image className="article-thumbnail" src={post.thumbnail} width={1200} height={630} alt={post.title}/>}</header><section className="content-wrap article-layout"><article className="prose"><nav className="toc" aria-label="On this page"><strong>On this page</strong>{post.sections.map(s=><a key={s.heading} href={`#${s.heading.toLowerCase().replace(/[^a-z0-9]+/g,'-')}`}>{s.heading}</a>)}</nav>{post.sections.map((s,i)=><section key={s.heading} id={s.heading.toLowerCase().replace(/[^a-z0-9]+/g,'-')}><h2>{s.heading}</h2>{s.paragraphs.map(p=><p key={p}>{p}</p>)}{i===2&&<p>Use the <Link href={post.internalService}>specialist service role</Link> to define scope and evidence.</p>}{i===4&&<p><a href={post.source.url} rel="noopener noreferrer">{post.source.label}</a> provides public guidance for testing workflow assumptions.</p>}{i===6&&<p>Continue with <Link href={post.internalSibling}>the next related Blog workflow</Link>.</p>}</section>)}<h2>Common questions answered</h2>{post.faq.map(x=><div key={x.q}><h3>{x.q}</h3><p>{x.a}</p></div>)}<Link id="cta-blog-final-bookcall" className="button primary" href="/contact-us">Book a free consultation</Link></article><aside className="sidebar"><p className="eyebrow">Blog field guide</p><h3>Keep evidence, ownership, and next action visible.</h3><p>Use the review steps in this guide to shape one receivables workflow.</p><Link id="cta-blog-sidebar-schedulecall" className="button" href="/contact-us">Schedule a free call</Link></aside></section><section className="section"><div className="section-heading"><p className="eyebrow">Related Blog articles</p><h2>Continue the operating system.</h2></div><div className="article-grid">{related.map(x=><Link className="article-card" href={`/blog/${x.slug}`} key={x.slug}><h3>{x.title}</h3><p>{x.description}</p></Link>)}</div></section></main>}
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { ArticleSidebar, type ArticleTocItem } from '@/components/ArticleSidebar';
+import { articleSectionId, displayArticleDate, siteOrigin } from '@/lib/article';
+import { blogBySlug, blogPosts } from '@/lib/content';
+import { site } from '@/lib/site';
+
+export function generateStaticParams() {
+  return blogPosts.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogBySlug(slug);
+  if (!post) return {};
+  const image = post.thumbnail!;
+  return {
+    title: post.title,
+    description: post.description,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.description,
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt,
+      images: [{ url: image, alt: post.title }],
+    },
+    twitter: { card: 'summary_large_image', title: post.title, description: post.description, images: [image] },
+  };
+}
+
+export default async function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = blogBySlug(slug);
+  if (!post) notFound();
+
+  const related = blogPosts.filter((item) => item.slug !== post.slug && item.category === post.category).slice(0, 3);
+  const fallbackRelated = related.length ? related : blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
+  const publishedLabel = displayArticleDate(post.publishedAt);
+  const updatedLabel = post.updatedAt ? displayArticleDate(post.updatedAt) : undefined;
+  const tocItems: ArticleTocItem[] = [
+    ...post.sections.map(({ heading }) => ({ id: articleSectionId(heading), label: heading })),
+    { id: 'common-questions', label: 'Common questions answered' },
+    { id: 'related-reading', label: 'Related reading' },
+  ];
+  const url = `${siteOrigin}/blog/${post.slug}`;
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    image: `${siteOrigin}${post.thumbnail}`,
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
+    author: { '@type': 'Organization', name: `${site.name} Editorial Team` },
+    publisher: { '@type': 'Organization', name: site.name, url: siteOrigin },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+  };
+
+  return (
+    <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
+      <header className="page-hero article-hero">
+        <p className="eyebrow"><Link href="/blog">Blog</Link> / {post.category}</p>
+        <h1>{post.title}</h1>
+        <p className="article-dek">{post.description}</p>
+        <div className="article-byline">
+          <span>{site.name} Editorial Team</span>
+          <span>Published <time dateTime={post.publishedAt}>{publishedLabel}</time></span>
+          {post.updatedAt ? <span>Updated <time dateTime={post.updatedAt}>{updatedLabel}</time></span> : null}
+          <span>{post.readTime}</span>
+        </div>
+        <Image className="article-thumbnail" src={post.thumbnail!} width={1200} height={630} priority alt={`${post.title} article cover`} />
+      </header>
+
+      <div className="content-wrap article-layout">
+        <article className="prose article-body">
+          {post.sections.map((section, index) => (
+            <section key={section.heading} aria-labelledby={articleSectionId(section.heading)}>
+              <h2 id={articleSectionId(section.heading)}>{section.heading}</h2>
+              {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {index === 2 ? <p>Explore the <Link href={post.internalService}>related specialist service</Link> to define scope, ownership, and evidence.</p> : null}
+              {index === 4 ? <p><a href={post.source.url} rel="noopener noreferrer">{post.source.label}</a> provides public guidance that can inform a documented review.</p> : null}
+              {index === 6 ? <p>Continue with <Link href={post.internalSibling}>a related workflow guide</Link>.</p> : null}
+            </section>
+          ))}
+
+          <section aria-labelledby="common-questions">
+            <h2 id="common-questions">Common questions answered</h2>
+            {post.faq.map((item) => <div key={item.q}><h3>{item.q}</h3><p>{item.a}</p></div>)}
+          </section>
+
+          <section aria-labelledby="related-reading">
+            <h2 id="related-reading">Related reading</h2>
+            <div className="article-related-list">
+              {fallbackRelated.map((item) => <Link href={`/blog/${item.slug}`} key={item.slug}>{item.title}</Link>)}
+            </div>
+          </section>
+
+          <div className="article-final-cta">
+            <h2>Define one reviewable receivables workflow.</h2>
+            <p>Bring the queue, owner, source records, and exceptions you need to make visible.</p>
+            <Link id="cta-blog-final-bookcall" className="button primary" href="/contact-us">Book a free consultation</Link>
+          </div>
+        </article>
+        <ArticleSidebar
+          items={tocItems}
+          topic={post.category}
+          publishedLabel={publishedLabel}
+          updatedLabel={updatedLabel}
+          readTime={post.readTime}
+          ctaHref={post.internalService}
+          ctaLabel="View related service"
+        />
+      </div>
+    </main>
+  );
+}

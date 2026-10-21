@@ -2,9 +2,33 @@ import { NextResponse } from 'next/server';
 import { sendLeadFallbackToMattermost } from '../../../lib/lead-fallback-mattermost';
 
 const personalDomains = new Set(['gmail.com','yahoo.com','hotmail.com','outlook.com','icloud.com','aol.com','proton.me','protonmail.com']);
+const MAX_BODY_BYTES = 64 * 1024;
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_REQUESTS_PER_WINDOW = 5;
+const requestWindows = new Map<string, { count: number; resetAt: number }>();
+
+function allowRequest(request: Request) {
+  const key = (request.headers.get('cf-connecting-ip') || request.headers.get('x-forwarded-for') || 'unknown').split(',')[0].trim();
+  const now = Date.now();
+  const current = requestWindows.get(key);
+  if (!current || current.resetAt <= now) {
+    requestWindows.set(key, { count: 1, resetAt: now + WINDOW_MS });
+    return true;
+  }
+  current.count += 1;
+  return current.count <= MAX_REQUESTS_PER_WINDOW;
+}
 
 export async function POST(request: Request) {
-  const form = await request.formData();
+  const statedLength = Number(request.headers.get('content-length') || 0);
+  if (statedLength > MAX_BODY_BYTES) return NextResponse.json({ ok: false, message: 'Request is too large.' }, { status: 413 });
+  if (!allowRequest(request)) return NextResponse.json({ ok: false, message: 'Please wait before trying again.' }, { status: 429 });
+  let form: FormData;
+  try {
+    form = await request.formData();
+  } catch {
+    return NextResponse.json({ ok: false, message: 'The request could not be read.' }, { status: 400 });
+  }
   if (form.get('website_url')) return NextResponse.json({ ok: true });
   const source = String(form.get('source') || '');
   const full = source.startsWith('contact-page');
