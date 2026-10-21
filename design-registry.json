@@ -1,0 +1,26 @@
+[
+  {
+    "domain": "accountsreceivablespecialist.com",
+    "industry": "accounts receivable operations staffing",
+    "audience": "controllers, finance leaders, and business owners",
+    "designFamily": "technical ledger editorial",
+    "heroComposition": "compact editorial statement with receivables workflow canvas",
+    "typeCharacter": "humanist serif display with practical sans body",
+    "paletteFamily": "deep teal, mint canvas, and restrained proof gold",
+    "shapeGrammar": "squared ledger tabs, ruled surfaces, and clipped corners",
+    "imageTreatment": "finance workflow diagrams, topic-specific editorial art, and documentary team photography",
+    "sectionRhythm": "dense operational modules alternating with open explanatory bands",
+    "navigationTreatment": "persistent full-width ledger bar with three exact destinations",
+    "motionSignature": "low-motion state changes with one continuous review ticker",
+    "density": "high-information, controlled whitespace",
+    "signatureElement": "receivables control ledger showing inputs, ownership, exceptions, and approvals",
+    "settings": {
+      "DESIGN_VARIANCE": 6,
+      "MOTION_INTENSITY": 3,
+      "VISUAL_DENSITY": 7,
+      "redesignMode": "evolve",
+      "primaryTheme": "light",
+      "accentStrategy": "gold reserved for proof and decision points"
+    }
+  }
+]

@@ -1,108 +1,46 @@
-import type { SiteConfig } from './types';
-export const site: SiteConfig = {
-  "name": "Accounts Receivable Specialist",
-  "domain": "accountsreceivablespecialist.com",
-  "siteId": "accounts-receivable-specialist",
-  "niche": "accounts receivable teams",
-  "audience": "controllers, finance leaders, and business owners",
-  "design": "ledger",
-  "eyebrow": "Receivables operations with a visible pulse",
-  "hero": "Make every open balance",
-  "heroAccent": "easier to act on.",
-  "heroBody": "Specialist remote assistants support invoice preparation, cash application records, aging views, approved collections follow up, dispute documentation, and customer account maintenance for finance teams.",
-  "manifesto": "A useful receivables system turns every balance into a documented owner, status, and next action.",
-  "primary": "#008b7b",
-  "secondary": "#72d6bc",
-  "accent": "#f4d06f",
-  "canvas": "#f1fbf7",
-  "ink": "#10352f",
-  "displayFont": "Century Schoolbook",
-  "bodyFont": "Trebuchet MS",
-  "heroImage": "/hero.png",
-  "heroAlt": "Teal invoice cards moving through checkpoints in a modular receivables workflow",
-  "services": [
-    {
-      "slug": "invoice-preparation",
-      "name": "Invoice preparation support",
-      "short": "Prepare invoice records and supporting detail for accountable review.",
-      "tasks": [
-        "Check approved source data",
-        "Prepare invoice drafts",
-        "Attach supporting records",
-        "Flag missing details"
-      ]
-    },
-    {
-      "slug": "cash-application-support",
-      "name": "Cash application support",
-      "short": "Organize payment records and exceptions for qualified review.",
-      "tasks": [
-        "Prepare payment records",
-        "Match approved references",
-        "Document unmatched items",
-        "Escalate discrepancies"
-      ]
-    },
-    {
-      "slug": "aging-report-preparation",
-      "name": "Aging report preparation",
-      "short": "Create clean operational views of balances, ownership, and next actions.",
-      "tasks": [
-        "Compile aging data",
-        "Check owner fields",
-        "Prepare status notes",
-        "Flag stale records"
-      ]
-    },
-    {
-      "slug": "collections-coordination",
-      "name": "Collections coordination",
-      "short": "Support approved customer follow up with documented boundaries.",
-      "tasks": [
-        "Prepare follow up queues",
-        "Send approved reminders",
-        "Record customer responses",
-        "Route disputes"
-      ]
-    },
-    {
-      "slug": "dispute-documentation",
-      "name": "Dispute documentation",
-      "short": "Maintain clear source records around customer questions and deductions.",
-      "tasks": [
-        "Index supporting records",
-        "Document issue status",
-        "Track requested materials",
-        "Escalate unresolved items"
-      ]
-    },
-    {
-      "slug": "customer-account-maintenance",
-      "name": "Customer account maintenance",
-      "short": "Keep approved billing contacts, terms, and status fields current.",
-      "tasks": [
-        "Update approved fields",
-        "Check contact records",
-        "Maintain account notes",
-        "Flag conflicting data"
-      ]
-    }
+import type { Service, SiteConfig } from './types';
+
+const service = (data: Pick<Service, 'slug' | 'name' | 'short' | 'audience' | 'problem' | 'scope' | 'inputs' | 'outputs' | 'scenarios' | 'related'>): Service => ({
+  ...data,
+  workflow: [
+    'Confirm the approved queue, source systems, owner, and completion standard.',
+    'Prepare or update the record using only authorized sources and statuses.',
+    'Separate complete items from missing, conflicting, or sensitive exceptions.',
+    'Send review-ready work to the named owner and record the accepted disposition.'
   ],
-  "categories": [
-    "Invoice operations",
-    "Cash application",
-    "Collections workflow",
-    "Role design"
+  boundaries: [
+    'Authorized finance leaders retain accounting judgment, approvals, policy, credit decisions, and payment control.',
+    'The specialist does not move money, change bank details, approve refunds or write-offs, provide legal advice, or conceal uncertainty.',
+    'Unexpected instructions, conflicting evidence, and work outside the written rule stop for human review.'
   ],
-  "principles": [
-    "Top 1 percent selectivity",
-    "Clear role boundaries",
-    "Reviewable workflows"
+  quality: [
+    'Use an acceptance checklist that covers required fields, source links, status, owner, and next action.',
+    'Sample routine and exception work, preserve corrections, and update the procedure when patterns appear.',
+    'Apply least-privilege access and keep customer and payment data in approved systems.'
   ],
-  "sources": [
-    {
-      "label": "Financial Accounting Standards Board",
-      "url": "https://www.fasb.org/"
-    }
+  faq: [
+    { q: 'What remains with our finance team?', a: 'Your authorized team retains approvals, accounting treatment, credit and collections strategy, payment movement, policy, and sensitive customer decisions.' },
+    { q: 'Can the role use our current systems?', a: 'Yes, when access is approved and limited. The workflow brief identifies systems of record, permitted fields, evidence, and escalation rules.' },
+    { q: 'How should we start?', a: 'Start with one recurring queue, a small controlled batch, a named reviewer, and a written definition of complete.' }
   ]
+});
+
+export const site: SiteConfig = {
+  name: 'Accounts Receivable Specialist', domain: 'accountsreceivablespecialist.com', siteId: 'accounts-receivable-specialist', niche: 'accounts receivable teams', audience: 'controllers, finance leaders, and business owners', design: 'ledger',
+  eyebrow: 'Receivables operations with a visible pulse', hero: 'Make every open balance', heroAccent: 'easier to act on.',
+  heroBody: 'Specialist remote assistants support invoice preparation, cash application records, aging views, approved collections follow up, dispute documentation, and customer account maintenance for finance teams.',
+  manifesto: 'A useful receivables system turns every balance into a documented owner, status, and next action.',
+  primary: '#087d70', secondary: '#72d6bc', accent: '#d8a82c', canvas: '#f1fbf7', ink: '#10352f', displayFont: 'Century Schoolbook', bodyFont: 'Trebuchet MS',
+  heroImage: '/hero.png', heroAlt: 'Teal invoice cards moving through checkpoints in a modular receivables workflow',
+  services: [
+    service({slug:'invoice-preparation',name:'Invoice preparation support',short:'Prepare invoice records and supporting detail for accountable review.',audience:'Billing managers, controllers, and finance teams with recurring invoice preparation queues.',problem:'Drafts stall when order details, rate sources, delivery destinations, and approvals are scattered across systems.',scope:['Check approved billing sources and customer records','Prepare invoice drafts without issuing or approving them','Attach order, service, and delivery support','Flag missing details and source conflicts'],inputs:['Approved order or contract data','Service or fulfillment evidence','Current customer billing instructions','Written tax, fee, and approval rules'],outputs:['Review-ready invoice draft','Linked support packet','Exception record with owner and due point','Queue status and next action'],scenarios:[{title:'Recurring billing queue',detail:'Prepare a controlled batch from approved source records for billing-owner review.'},{title:'Missing source detail',detail:'Hold the draft, name the missing evidence, and route a bounded question to the owner.'}],related:['customer-account-maintenance','dispute-documentation']}),
+    service({slug:'cash-application-support',name:'Cash application support',short:'Organize payment records and exceptions for qualified review.',audience:'Cash application leads and controllers managing remittance and unmatched receipt queues.',problem:'Receipts remain unapplied when payer identity, remittance, invoice candidates, or allocation evidence is incomplete.',scope:['Prepare payment records','Match only approved references','Document unmatched or conflicting items','Route proposed applications for qualified approval'],inputs:['Bank or lockbox receipt record','Customer remittance evidence','Open invoice records','Approved matching and tolerance rules'],outputs:['Proposed application packet','Unmatched cash exception record','Evidence links and confidence note','Reviewer-ready reconciliation queue'],scenarios:[{title:'Clear remittance',detail:'Assemble the receipt, customer, invoice, and remittance trail for authorized posting review.'},{title:'Conflicting allocation',detail:'Preserve each candidate and stop for qualified judgment rather than forcing a match.'}],related:['aging-report-preparation','customer-account-maintenance']}),
+    service({slug:'aging-report-preparation',name:'Aging report preparation',short:'Create clean operational views of balances, ownership, and next actions.',audience:'Controllers and collections leaders who need a usable view of open receivables work.',problem:'An aging export does not become an operating queue until balances, owners, exceptions, and next actions are reconciled.',scope:['Compile approved aging data','Check owner and status fields','Prepare concise action notes','Flag stale, disputed, or unsupported records'],inputs:['Frozen aging report or ledger export','Customer and invoice identifiers','Approved owner map','Status and exception definitions'],outputs:['Prepared aging view','Owner and next-action queue','Stale-record exception list','Reconciliation notes for finance review'],scenarios:[{title:'Weekly aging review',detail:'Prepare a consistent view of open balances and documented actions before the team meeting.'},{title:'Ownership gap',detail:'Route unassigned or conflicting accounts to the accountable manager for assignment.'}],related:['collections-coordination','cash-application-support']}),
+    service({slug:'collections-coordination',name:'Collections coordination',short:'Support approved customer follow up with documented boundaries.',audience:'Collections managers and finance teams with approved business-to-business follow up workflows.',problem:'Follow up becomes risky when contact preferences, message versions, promises, disputes, and escalation rules are unclear.',scope:['Prepare approved follow up queues','Send authorized message templates','Record customer responses accurately','Route disputes, commitments, and sensitive exceptions'],inputs:['Approved aging and contact queue','Current message templates','Contact preference register','Escalation and communication policy'],outputs:['Documented contact activity','Response and commitment record','Dispute or exception handoff','Queue status with accountable owner'],scenarios:[{title:'Routine reminder queue',detail:'Send the approved message through the permitted channel and record the result.'},{title:'Customer raises a dispute',detail:'Stop routine follow up and route the exact statement with supporting records.'}],related:['dispute-documentation','aging-report-preparation']}),
+    service({slug:'dispute-documentation',name:'Dispute documentation',short:'Maintain clear source records around customer questions and deductions.',audience:'Finance and commercial teams that need complete dispute packets before making account decisions.',problem:'Resolution slows when customer claims, invoice evidence, fulfillment records, amounts, and ownership are fragmented.',scope:['Index supporting records','Document the customer statement and issue status','Track requested materials','Escalate unresolved or sensitive items'],inputs:['Customer correspondence','Invoice and order records','Fulfillment or delivery evidence','Approved issue codes and owner map'],outputs:['Structured dispute packet','Evidence index and missing-item list','Current owner and decision request','Documented resolution handoff'],scenarios:[{title:'Short payment claim',detail:'Assemble the invoice, remittance, claim, and fulfillment evidence for commercial review.'},{title:'Incomplete packet',detail:'Return a precise missing-item request without deciding whether the claim is valid.'}],related:['invoice-preparation','collections-coordination']}),
+    service({slug:'customer-account-maintenance',name:'Customer account maintenance',short:'Keep approved billing contacts, terms, and status fields current.',audience:'Billing and finance operations teams maintaining high-use customer master data.',problem:'Outdated recipients, preferences, terms, and ownership fields create avoidable delivery and follow up exceptions.',scope:['Update only approved fields','Verify contact-change evidence','Maintain account notes and preferences','Flag conflicting or high-risk instructions'],inputs:['Authorized change request','Known-channel verification evidence','Current customer master record','Field ownership and approval rules'],outputs:['Updated authorized fields','Change evidence and audit note','Conflict or fraud-risk exception','Confirmation to the accountable owner'],scenarios:[{title:'Billing contact change',detail:'Verify the request through the approved path before preparing the controlled update.'},{title:'Bank-detail request',detail:'Do not process it in this role; pause and escalate through the organization’s security procedure.'}],related:['invoice-preparation','collections-coordination']})
+  ],
+  categories: ['Invoice operations','Cash application','Collections workflow','Role design'],
+  principles: ['Selective matching','Clear role boundaries','Reviewable workflows'],
+  sources: [{label:'Financial Accounting Standards Board',url:'https://www.fasb.org/'}]
 };

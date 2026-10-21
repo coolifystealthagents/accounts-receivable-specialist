@@ -921,12 +921,28 @@ export const researchPosts: ResearchPost[] = [
 researchPosts.unshift(...october12ResearchPosts);
 researchPosts.unshift(...october13ResearchPosts);
 
+const protocolSections = (post: ResearchPost): NonNullable<ResearchPost['sections']> => [
+  { heading: 'Protocol status and question', paragraphs: [`This is a proposed research protocol, not a report of completed findings. It asks how a team could examine ${post.title.toLowerCase()} without turning an operational observation into an account decision.`, 'Before collection begins, the sponsor should document the decision this protocol may inform and the decisions it cannot make.'] },
+  { heading: 'Population and observation unit', paragraphs: ['Define one observable record as the unit, freeze the review window, and publish inclusion, exclusion, duplicate, and missing-data rules before outcomes are inspected.', 'Keep excluded and unresolved records visible so the final denominator can be reconstructed.'] },
+  { heading: 'Evidence and measurement plan', paragraphs: ['Create a versioned data dictionary for each field, permitted source, timestamp, transformation, and reviewer code. Link every classification to the underlying evidence.', 'Unknown, conflicted, not applicable, and unavailable are distinct states. None should be silently converted to a favorable result.'] },
+  { heading: 'Review and analysis method', paragraphs: ['Use independent review on an overlap sample and retain initial classifications before discussion. Report disagreement and adjudication rather than only the reconciled value.', 'Present counts with rates, define grouping choices in advance, and separate descriptive observations from recommendations.'] },
+  { heading: 'Privacy and operational controls', paragraphs: ['Minimize customer and payment data, use study keys, restrict exports, define retention, and keep analysis access separate from production authority.', 'The protocol does not authorize posting, customer contact, credit action, or changes to an account. Those decisions remain with qualified owners.'] },
+  { heading: 'Limitations and responsible use', paragraphs: [`The protocol begins with this operational premise: ${post.finding} It has not yet been tested on a stated sample.`, 'Selection effects, inaccessible evidence, changing systems, correlated accounts, and reviewer learning can limit interpretation. A result should never be generalized beyond its documented population.'] },
+  { heading: 'Reporting package', paragraphs: ['A complete report should include the frozen protocol, population counts, dictionary, evidence coverage, exclusions, missingness, results, reviewer agreement, adjudications, counterexamples, and limitations.', 'Findings, interpretation, and proposed process changes should appear as separate sections so readers can see where evidence ends and judgment begins.'] }
+];
+
+const defaultArticleImage = '/article-ledger.svg';
+for (const post of blogPosts) post.thumbnail ||= defaultArticleImage;
+for (const post of researchPosts) {
+  post.thumbnail ||= defaultArticleImage;
+  post.sections ||= protocolSections(post);
+  post.readTime ||= '8 min read';
+}
+
 export const nav = [
+  { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
-  { href: '/about', label: 'About' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/research', label: 'Research' },
-  { href: '/contact-us', label: 'Contact' }
+  { href: '/contact-us', label: 'Contact Us' }
 ];
 
 export function serviceBySlug(slug: string) { return site.services.find((service) => service.slug === slug); }

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Accounts receivable evidence workflow</title>
+  <desc id="desc">A technical ledger illustration connecting invoices, evidence, exceptions, and human approval.</desc>
+  <rect width="1200" height="630" fill="#e9f8f3"/>
+  <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200M150 0v630M300 0v630M450 0v630M600 0v630M750 0v630M900 0v630M1050 0v630" stroke="#b9ddd3" stroke-width="2"/>
+  <rect x="90" y="105" width="300" height="180" fill="#fff" stroke="#10352f" stroke-width="5"/>
+  <path d="M130 155h210M130 200h150M130 245h185" stroke="#087d70" stroke-width="14"/>
+  <rect x="460" y="210" width="280" height="180" fill="#087d70" stroke="#10352f" stroke-width="5"/>
+  <circle cx="510" cy="265" r="18" fill="#d8a82c"/><path d="M550 265h140M505 325h190" stroke="#fff" stroke-width="13"/>
+  <rect x="810" y="330" width="300" height="180" fill="#fff" stroke="#10352f" stroke-width="5"/>
+  <path d="M850 385h210M850 430h175M850 475h125" stroke="#087d70" stroke-width="14"/>
+  <path d="M390 195h90M730 350h90" stroke="#d8a82c" stroke-width="12"/>
+  <path d="m462 178 24 17-24 17M802 333l24 17-24 17" fill="none" stroke="#d8a82c" stroke-width="9"/>
+</svg>
