@@ -6,6 +6,7 @@ import { ArticleSidebar, type ArticleTocItem } from '@/components/ArticleSidebar
 import { articleSectionId, displayArticleDate, siteOrigin } from '@/lib/article';
 import { researchBySlug, researchPosts } from '@/lib/content';
 import { site } from '@/lib/site';
+import TocSync from '@/components/TocSync';
 
 const serviceByCluster: Record<string, string> = {
   'Invoice operations': '/services/invoice-preparation',
@@ -72,7 +73,7 @@ export default async function ResearchArticlePage({ params }: { params: Promise<
   };
 
   return (
-    <main>
+    <main><TocSync />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
       <header className="page-hero article-hero">
         <p className="eyebrow"><Link href="/research">Research</Link> / {post.cluster}</p>
