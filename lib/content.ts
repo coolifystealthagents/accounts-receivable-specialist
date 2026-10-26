@@ -480,6 +480,7 @@ export const blogPosts: BlogPost[] = [...oct26b, ...oct25b,
 ];
 blogPosts.unshift(...october12BlogPosts);
 blogPosts.unshift(...october13BlogPosts);
+blogPosts.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
 export const researchPosts: ResearchPost[] = [...oct26r, ...oct25r, 
   ...october22ResearchBatch,
@@ -927,6 +928,7 @@ export const researchPosts: ResearchPost[] = [...oct26r, ...oct25r,
 
 researchPosts.unshift(...october12ResearchPosts);
 researchPosts.unshift(...october13ResearchPosts);
+researchPosts.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
 const protocolSections = (post: ResearchPost): NonNullable<ResearchPost['sections']> => [
   { heading: 'Protocol status and question', paragraphs: [`This is a proposed research protocol, not a report of completed findings. It asks how a team could examine ${post.title.toLowerCase()} without turning an operational observation into an account decision.`, 'Before collection begins, the sponsor should document the decision this protocol may inform and the decisions it cannot make.'] },
