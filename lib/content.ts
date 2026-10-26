@@ -5,8 +5,9 @@ import { october12ResearchPosts } from './october12ResearchPosts';
 import { october13BlogPosts } from './october13BlogPosts';
 import { october13ResearchPosts } from './october13ResearchPosts';
 import { october22BlogBatch, october22ResearchBatch } from './october22Batch';
+import { october25BlogPosts as oct25b, october25ResearchPosts as oct25r } from './october25-batch';
 
-export const blogPosts: BlogPost[] = [
+export const blogPosts: BlogPost[] = [...oct25b, 
   ...october22BlogBatch,
   {
     "slug": "fractional-controller-vs-accounts-receivable-va",
@@ -477,7 +478,7 @@ export const blogPosts: BlogPost[] = [
 blogPosts.unshift(...october12BlogPosts);
 blogPosts.unshift(...october13BlogPosts);
 
-export const researchPosts: ResearchPost[] = [
+export const researchPosts: ResearchPost[] = [...oct25r, 
   ...october22ResearchBatch,
   {
     "slug": "invoice-preparation-workflow-boundary-review-1",
