@@ -1,4 +1,4 @@
-import type { BlogPost, ResearchPost } from './types';
+import type { BlogPost } from './types';
 
 export const october25BlogPosts: BlogPost[] = [
 {
@@ -3052,7 +3052,4 @@ export const october25BlogPosts: BlogPost[] = [
     }
   ]
 },
-];
-
-export const october25ResearchPosts: ResearchPost[] = [
 ];
