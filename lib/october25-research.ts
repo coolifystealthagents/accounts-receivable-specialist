@@ -4,7 +4,6 @@ export const october25ResearchPosts: ResearchPost[] = [
 {
   "slug": "ars-access-removal",
   "title": "How Long Does Accounts Receivable And Collections Operations Access Outlive the Assignment?",
-  "description": "A pre-send check for customer, contract, tax, and delivery evidence.",
   "category": "Billing operations",
   "publishedAt": "2026-10-25",
   "readTime": "11 min read",
@@ -283,7 +282,6 @@ export const october25ResearchPosts: ResearchPost[] = [
 {
   "slug": "ars-handoff-completeness",
   "title": "Can a Second Reviewer Continue the Accounts Receivable And Collections Operations Handoff?",
-  "description": "A matching routine for payments, remittances, short pays, and unapplied cash.",
   "category": "Cash application",
   "publishedAt": "2026-10-25",
   "readTime": "12 min read",
@@ -562,7 +560,6 @@ export const october25ResearchPosts: ResearchPost[] = [
 {
   "slug": "ars-intake-reliability",
   "title": "How Complete Is the Accounts Receivable And Collections Operations Intake Record at First Review?",
-  "description": "A documented sequence for reminders, promises, and escalation.",
   "category": "Collections",
   "publishedAt": "2026-10-25",
   "readTime": "11 min read",
@@ -841,7 +838,6 @@ export const october25ResearchPosts: ResearchPost[] = [
 {
   "slug": "ars-queue-aging",
   "title": "Where Does Accounts Receivable And Collections Operations Queue Time Actually Go?",
-  "description": "A workflow for request evidence, approval, and customer communication.",
   "category": "Billing operations",
   "publishedAt": "2026-10-25",
   "readTime": "12 min read",
@@ -1120,7 +1116,6 @@ export const october25ResearchPosts: ResearchPost[] = [
 {
   "slug": "ars-reviewer-agreement",
   "title": "Do Reviewers Agree on Accounts Receivable And Collections Operations Exception Codes?",
-  "description": "A routine for portal updates, access issues, and disputed invoices.",
   "category": "Customer records",
   "publishedAt": "2026-10-25",
   "readTime": "11 min read",
