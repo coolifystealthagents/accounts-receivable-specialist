@@ -9,8 +9,12 @@ import { october25BlogPosts as oct25b } from './october25-blog';
 import { october25ResearchPosts as oct25r } from './october25-research';
 import { october26BlogPosts as oct26b } from './october26-blog';
 import { october26ResearchPosts as oct26r } from './october26-research';
+import { october27BlogPosts as oct27b } from './october27-blog';
+import { october27ResearchPosts as oct27r } from './october27-research';
 
-export const blogPosts: BlogPost[] = [...oct26b, ...oct25b, 
+export const blogPosts: BlogPost[] = [
+  ...oct27b,
+  ...oct26b, ...oct25b, 
   ...october22BlogBatch,
   {
     "slug": "fractional-controller-vs-accounts-receivable-va",
@@ -482,7 +486,9 @@ blogPosts.unshift(...october12BlogPosts);
 blogPosts.unshift(...october13BlogPosts);
 blogPosts.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
-export const researchPosts: ResearchPost[] = [...oct26r, ...oct25r, 
+export const researchPosts: ResearchPost[] = [
+  ...oct27r,
+  ...oct26r, ...oct25r, 
   ...october22ResearchBatch,
   {
     "slug": "invoice-preparation-workflow-boundary-review-1",
