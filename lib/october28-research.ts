@@ -9,7 +9,6 @@ export const october28ResearchPosts: readonly ResearchPost[] = [
     "publishedAt": "2026-10-28",
     "finding": "This protocol asks how the cash application can be described from the operational record in accounts receivable and collections operations.",
     "thumbnail": "/thumbnails/october-28/accountsreceivablespecialist-audit-trail-completeness-for-the-cash-application.webp",
-    "methodology": "A repeatable measurement protocol for the cash application in accounts receivable and collections operations, with definitions, sampling, limits, and reporting.",
     "sections": [
       {
         "heading": "Research question and scope",
@@ -171,7 +170,6 @@ export const october28ResearchPosts: readonly ResearchPost[] = [
     "publishedAt": "2026-10-28",
     "finding": "This protocol asks how the AR aging report can be described from the operational record in accounts receivable and collections operations.",
     "thumbnail": "/thumbnails/october-28/accountsreceivablespecialist-coverage-risk-in-the-ar-aging-report.webp",
-    "methodology": "A repeatable measurement protocol for the AR aging report in accounts receivable and collections operations, with definitions, sampling, limits, and reporting.",
     "sections": [
       {
         "heading": "Research question and scope",
@@ -333,7 +331,6 @@ export const october28ResearchPosts: readonly ResearchPost[] = [
     "publishedAt": "2026-10-28",
     "finding": "This protocol asks how the collections queue can be described from the operational record in accounts receivable and collections operations.",
     "thumbnail": "/thumbnails/october-28/accountsreceivablespecialist-exception-aging-in-the-collections-queue.webp",
-    "methodology": "A repeatable measurement protocol for the collections queue in accounts receivable and collections operations, with definitions, sampling, limits, and reporting.",
     "sections": [
       {
         "heading": "Research question and scope",
@@ -496,7 +493,6 @@ export const october28ResearchPosts: readonly ResearchPost[] = [
     "publishedAt": "2026-10-28",
     "finding": "This protocol asks how the customer credit hold can be described from the operational record in accounts receivable and collections operations.",
     "thumbnail": "/thumbnails/october-28/accountsreceivablespecialist-handoff-delay-patterns-in-the-customer-credit-hold.webp",
-    "methodology": "A repeatable measurement protocol for the customer credit hold in accounts receivable and collections operations, with definitions, sampling, limits, and reporting.",
     "sections": [
       {
         "heading": "Research question and scope",
@@ -658,7 +654,6 @@ export const october28ResearchPosts: readonly ResearchPost[] = [
     "publishedAt": "2026-10-28",
     "finding": "This protocol asks how the dispute packet can be described from the operational record in accounts receivable and collections operations.",
     "thumbnail": "/thumbnails/october-28/accountsreceivablespecialist-signal-quality-in-the-dispute-packet.webp",
-    "methodology": "A repeatable measurement protocol for the dispute packet in accounts receivable and collections operations, with definitions, sampling, limits, and reporting.",
     "sections": [
       {
         "heading": "Research question and scope",

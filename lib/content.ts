@@ -11,6 +11,8 @@ import { october26BlogPosts as oct26b } from './october26-blog';
 import { october26ResearchPosts as oct26r } from './october26-research';
 import { october27BlogPosts as oct27b } from './october27-blog';
 import { october27ResearchPosts as oct27r } from './october27-research';
+import { october28BlogPosts } from './october28-blog';
+import { october28ResearchPosts } from './october28-research';
 
 export const blogPosts: BlogPost[] = [
   ...october28BlogPosts,
