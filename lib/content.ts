@@ -13,6 +13,7 @@ import { october27BlogPosts as oct27b } from './october27-blog';
 import { october27ResearchPosts as oct27r } from './october27-research';
 
 export const blogPosts: BlogPost[] = [
+  ...october28BlogPosts,
   ...oct27b,
   ...oct26b, ...oct25b, 
   ...october22BlogBatch,
@@ -487,6 +488,7 @@ blogPosts.unshift(...october13BlogPosts);
 blogPosts.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
 export const researchPosts: ResearchPost[] = [
+  ...october28ResearchPosts,
   ...oct27r,
   ...oct26r, ...oct25r, 
   ...october22ResearchBatch,
