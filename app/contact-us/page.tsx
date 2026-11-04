@@ -5,6 +5,7 @@ import { LeadForm } from '@/components/LeadForm';
 import { ReviewMarquee } from '@/components/ReviewMarquee';
 import { site } from '@/lib/site';
 import './contact.css';
+import './contact-sharp.css';
 
 export const metadata: Metadata = { title: 'Contact Us | Accounts Receivable Staffing Consultation', description: 'Talk with Accounts Receivable Specialist about managed support for invoice, cash application, aging, collections, dispute, and customer account workflows.', alternates: { canonical: '/contact-us' }, openGraph: { title: 'Contact Accounts Receivable Specialist', description: 'Design a controlled remote support role for recurring receivables work.', images: ['/brand/stealth-agents-team-bacolod.png'] } };
 const faqs = [
@@ -27,7 +28,7 @@ export default function ContactPage() {
       <div className="contact-form-card"><p className="eyebrow">Start the conversation</p><h2>Book a free consultation</h2><p>Share enough context for a useful staffing conversation. Do not include credentials, bank details, customer records, or payment data.</p><LeadForm source="contact-page-consultation" /></div>
     </section>
     <section className="team-proof">
-      <div className="team-image"><Image src="/brand/stealth-agents-team-bacolod.png" alt="Stealth Agents team in Bacolod" fill sizes="(max-width: 800px) 100vw, 52vw" /></div>
+      <div className="team-image"><Image src="/brand/stealth-agents-team-bacolod.png" alt="Stealth Agents team gathered at the Bacolod city plaza" width={953} height={540} sizes="(max-width: 900px) 90vw, 600px" /></div>
       <div className="team-copy"><Image className="official-logo" src="/brand/stealth-agents-logo-black.png" alt="Stealth Agents" width={190} height={51} /><p className="eyebrow">Official team, Bacolod</p><h2>Managed service support built around your operating rules.</h2><p>Accounts Receivable Specialist is powered by Stealth Agents. The managed service helps define the role, match an assistant, and establish communication and support around the engagement.</p><p>Your organization still owns financial policy, approvals, system access, customer commitments, and final records. The specialist works within documented queues and routes exceptions to the people authorized to decide.</p><a className="text-link" href="https://stealthagents.com/" rel="noopener noreferrer">Visit the official Stealth Agents website</a></div>
     </section>
     <section className="contact-section"><div className="contact-container"><p className="eyebrow">A practical start</p><h2>What happens after you reach out</h2><div className="step-grid"><article><h3>Discover the workflow</h3><p>Map recurring work, current owners, source systems, volume, and exceptions.</p></article><article><h3>Define the role</h3><p>Set inputs, outputs, permissions, review points, and escalation rules.</p></article><article><h3>Match for the work</h3><p>Review candidates whose strengths fit the documented scope and systems.</p></article><article><h3>Launch with control</h3><p>Begin with a bounded queue and inspect quality before expanding.</p></article></div></div></section>

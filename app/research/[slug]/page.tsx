@@ -8,6 +8,8 @@ import { researchBySlug, researchPosts } from '@/lib/content';
 import { site } from '@/lib/site';
 import TocSync from '@/components/TocSync';
 
+const sectionFamilies = ['plain', 'split', 'ledger', 'signal'] as const;
+
 const serviceByCluster: Record<string, string> = {
   'Invoice operations': '/services/invoice-preparation',
   'Cash application': '/services/cash-application-support',
@@ -96,19 +98,19 @@ export default async function ResearchArticlePage({ params }: { params: Promise<
             <p>{post.finding}</p>
           </div>
 
-          {sections.map((section) => (
-            <section key={section.heading} aria-labelledby={articleSectionId(section.heading)}>
+          {sections.map((section, index) => (
+            <section className={`article-section article-section-${sectionFamilies[index % sectionFamilies.length]}`} data-section={String(index + 1).padStart(2, '0')} key={section.heading} aria-labelledby={articleSectionId(section.heading)}>
               <h2 id={articleSectionId(section.heading)}>{section.heading}</h2>
               {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </section>
           ))}
 
-          <section className="sources" aria-labelledby="sources">
+          <section className="sources article-section article-section-sources" aria-labelledby="sources">
             <h2 id="sources">Sources</h2>
             <ol>{post.sources.map((source) => <li key={source.url}><a href={source.url} rel="noopener noreferrer">{source.label}</a></li>)}</ol>
           </section>
 
-          <section aria-labelledby="related-research">
+          <section className="article-section article-section-related" aria-labelledby="related-research">
             <h2 id="related-research">Related research</h2>
             <div className="article-related-list">
               {fallbackRelated.map((item) => <Link href={`/research/${item.slug}`} key={item.slug}>{item.title}</Link>)}

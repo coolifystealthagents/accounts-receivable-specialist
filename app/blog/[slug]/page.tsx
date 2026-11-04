@@ -8,6 +8,8 @@ import { blogBySlug, blogPosts } from '@/lib/content';
 import { site } from '@/lib/site';
 import TocSync from '@/components/TocSync';
 
+const sectionFamilies = ['plain', 'split', 'ledger', 'signal'] as const;
+
 export function generateStaticParams() {
   return blogPosts.map(({ slug }) => ({ slug }));
 }
@@ -80,7 +82,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
       <div className="content-wrap article-layout">
         <article className="prose article-body">
           {post.sections.map((section, index) => (
-            <section key={section.heading} aria-labelledby={articleSectionId(section.heading)}>
+            <section className={`article-section article-section-${sectionFamilies[index % sectionFamilies.length]}`} data-section={String(index + 1).padStart(2, '0')} key={section.heading} aria-labelledby={articleSectionId(section.heading)}>
               <h2 id={articleSectionId(section.heading)}>{section.heading}</h2>
               {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               {index === 2 ? <p>Explore the <Link href={post.internalService}>related specialist service</Link> to define scope, ownership, and evidence.</p> : null}
@@ -89,12 +91,12 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
             </section>
           ))}
 
-          <section aria-labelledby="common-questions">
+          <section className="article-section article-section-questions" aria-labelledby="common-questions">
             <h2 id="common-questions">Common questions answered</h2>
             {post.faq.map((item) => <div key={item.q}><h3>{item.q}</h3><p>{item.a}</p></div>)}
           </section>
 
-          <section aria-labelledby="related-reading">
+          <section className="article-section article-section-related" aria-labelledby="related-reading">
             <h2 id="related-reading">Related reading</h2>
             <div className="article-related-list">
               {fallbackRelated.map((item) => <Link href={`/blog/${item.slug}`} key={item.slug}>{item.title}</Link>)}

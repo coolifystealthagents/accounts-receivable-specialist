@@ -1,0 +1,27 @@
+.team-image {
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  padding: clamp(2rem, 4vw, 4rem);
+  background: #0b2925;
+}
+
+.team-image img {
+  position: static;
+  display: block;
+  width: min(600px, 100%);
+  height: auto;
+  aspect-ratio: 953 / 540;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 12px 12px 0 #d8a82c;
+}
+
+@media (max-width: 900px) {
+  .team-image { min-height: auto; }
+}
+
+@media (max-width: 520px) {
+  .team-image { min-height: auto; padding: 2rem 5vw; }
+  .team-image img { box-shadow: 7px 7px 0 #d8a82c; }
+}
