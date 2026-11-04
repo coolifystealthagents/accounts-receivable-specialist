@@ -8,7 +8,7 @@ const securityHeaders = [
 ];
 const nextConfig = {
   output: 'standalone',
-  images: { unoptimized: true, formats: ['image/avif', 'image/webp'] },
+  images: { formats: ['image/avif', 'image/webp'] },
   async headers() { return [{ source: '/(.*)', headers: securityHeaders }]; },
   async redirects() { return [{ source: '/:path*', has: [{ type: 'host', value: 'www.accountsreceivablespecialist.com' }], destination: 'https://accountsreceivablespecialist.com/:path*', permanent: true }]; }
 };
