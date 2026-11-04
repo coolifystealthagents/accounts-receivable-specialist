@@ -99,7 +99,7 @@ export default async function ResearchArticlePage({ params }: { params: Promise<
           </div>
 
           {sections.map((section, index) => (
-            <section className={`article-section article-section-${sectionFamilies[index % sectionFamilies.length]}`} data-section={String(index + 1).padStart(2, '0')} key={section.heading} aria-labelledby={articleSectionId(section.heading)}>
+            <section className={`article-section article-section-${sectionFamilies[index % sectionFamilies.length]}`} key={section.heading} aria-labelledby={articleSectionId(section.heading)}>
               <h2 id={articleSectionId(section.heading)}>{section.heading}</h2>
               {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </section>

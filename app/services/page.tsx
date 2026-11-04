@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 const serviceGroups = [
-  { step: '01', title: 'Prepare the record', summary: 'Turn approved source material into review-ready billing and payment records.', slugs: ['invoice-preparation', 'cash-application-support'] },
-  { step: '02', title: 'Make the queue usable', summary: 'Connect balances to owners, next actions, communication, and bounded escalation.', slugs: ['aging-report-preparation', 'collections-coordination'] },
-  { step: '03', title: 'Protect the evidence', summary: 'Keep customer questions and approved account changes reconstructable for the next reviewer.', slugs: ['dispute-documentation', 'customer-account-maintenance'] },
+  { title: 'Prepare the record', summary: 'Turn approved source material into review-ready billing and payment records.', slugs: ['invoice-preparation', 'cash-application-support'] },
+  { title: 'Make the queue usable', summary: 'Connect balances to owners, next actions, communication, and bounded escalation.', slugs: ['aging-report-preparation', 'collections-coordination'] },
+  { title: 'Protect the evidence', summary: 'Keep customer questions and approved account changes reconstructable for the next reviewer.', slugs: ['dispute-documentation', 'customer-account-maintenance'] },
 ];
 
 const faqs = [
@@ -28,25 +28,26 @@ export default function ServicesPage() {
     <header className="service-hero">
       <div className="service-hero-copy">
         <p className="eyebrow">Accounts receivable support system</p>
-        <h1>Move routine work forward without moving financial authority.</h1>
+        <h1>Move receivables <span className="inline-hero-image" aria-hidden="true"><Image src="/images/blog-receivables-analysis.jpg" alt="" fill sizes="120px" /></span> forward. Keep authority clear.</h1>
         <p className="lede">Six focused service lanes help finance teams prepare records, expose exceptions, coordinate approved follow up, and keep evidence ready for the person who owns the decision.</p>
         <div className="hero-actions"><Link className="button primary" href="/contact-us">Scope a support lane</Link><a className="quiet-link" href="#service-directory">Compare all services</a></div>
         <div className="service-system" aria-label="How the service system works">
           <span><b>Input</b> Approved sources</span><span><b>Work</b> Prepare and coordinate</span><span><b>Stop</b> Route exceptions</span><span><b>Decision</b> Finance owner approves</span>
         </div>
       </div>
-      <div className="service-hero-image"><Image src="/images/services-workflow-review.jpg" alt="Two professionals reviewing financial reports beside a laptop" fill priority sizes="(max-width: 800px) 100vw, 42vw" /></div>
+      <div className="service-hero-image" data-motion-image><Image src="/images/services-workflow-review.jpg" alt="Two professionals reviewing financial reports beside a laptop" fill priority sizes="(max-width: 800px) 100vw, 42vw" /></div>
     </header>
 
     <section className="services-argument">
       <div><p className="eyebrow">Why the system matters</p><h2>A backlog is rarely just a capacity problem.</h2></div>
-      <div><p>Receivables work slows when source records, ownership, communication, and decision rights are mixed together. Adding help without separating those elements can create faster activity and weaker control.</p><p>The service system separates preparation and coordination from authority. A specialist can organize the record, apply approved rules, surface what is missing, and leave a clear next action. Your finance team keeps the decisions that change money, policy, customer commitments, or accounting treatment.</p></div>
+      <div><p>Receivables work slows when source records, ownership, communication, and decision rights are mixed together. Adding help without separating those elements can create faster activity and weaker control.</p><p data-motion-copy>The service system separates preparation and coordination from authority. A specialist can organize the record, apply approved rules, surface what is missing, and leave a clear next action. Your finance team keeps the decisions that change money, policy, customer commitments, or accounting treatment.</p></div>
     </section>
 
     <section id="service-directory" className="service-directory" aria-labelledby="service-directory-title">
       <div className="directory-heading"><p className="eyebrow">The full offering</p><h2 id="service-directory-title">Choose by the point where work loses clarity.</h2><p>Each destination explains the intended audience, inputs, outputs, operating steps, boundaries, quality checks, and common scenarios for that lane.</p></div>
-      {serviceGroups.map((group) => <section className="service-group" key={group.step}>
-        <header><span>{group.step}</span><div><h3>{group.title}</h3><p>{group.summary}</p></div></header>
+      <div className="stage-accordion" aria-label="Three parts of the receivables support system">{serviceGroups.map((group) => <article key={group.title}><strong>{group.title}</strong><p>{group.summary}</p></article>)}</div>
+      {serviceGroups.map((group) => <section className="service-group" key={group.title}>
+        <header><div><h3>{group.title}</h3><p>{group.summary}</p></div></header>
         <div className="service-lane-list">
           {group.slugs.map((slug) => {
             const service = site.services.find((item) => item.slug === slug)!;
@@ -70,10 +71,10 @@ export default function ServicesPage() {
     <section className="operating-guidance">
       <div><p className="eyebrow">Operational guidance</p><h2>Build the lane before expanding the role.</h2></div>
       <ol>
-        <li><span>01</span><div><strong>Name one recurring queue.</strong><p>Document the volume, frequency, source systems, current owner, and service standard.</p></div></li>
-        <li><span>02</span><div><strong>Separate preparation from approval.</strong><p>List permitted actions, protected decisions, access limits, and stop conditions in plain language.</p></div></li>
-        <li><span>03</span><div><strong>Define the evidence of completion.</strong><p>Use required fields, source links, timestamps, owner notes, and a visible disposition for exceptions.</p></div></li>
-        <li><span>04</span><div><strong>Review before scaling.</strong><p>Sample routine work and exceptions, preserve corrections, and update the procedure when patterns appear.</p></div></li>
+        <li><div><strong>Name one recurring queue.</strong><p>Document the volume, frequency, source systems, current owner, and service standard.</p></div></li>
+        <li><div><strong>Separate preparation from approval.</strong><p>List permitted actions, protected decisions, access limits, and stop conditions in plain language.</p></div></li>
+        <li><div><strong>Define the evidence of completion.</strong><p>Use required fields, source links, timestamps, owner notes, and a visible disposition for exceptions.</p></div></li>
+        <li><div><strong>Review before scaling.</strong><p>Sample routine work and exceptions, preserve corrections, and update the procedure when patterns appear.</p></div></li>
       </ol>
     </section>
 

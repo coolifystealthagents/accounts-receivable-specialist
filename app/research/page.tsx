@@ -26,15 +26,14 @@ export default function ResearchPage() {
       </section>
 
       {featured ? <section className="featured-editorial research-feature">
-        <div className="featured-image"><Image src={featured.thumbnail!} width={1200} height={630} alt={`${featured.title} research cover`} /></div>
+        <div className="featured-image" data-motion-image><Image src={featured.thumbnail!} width={1200} height={630} alt={`${featured.title} research cover`} /></div>
         <div><p className="eyebrow">Current protocol</p><span className="editorial-kicker">{featured.cluster} · {displayArticleDate(featured.publishedAt)}{featured.isProposedProtocol ? ' · Proposed protocol' : ''}</span><h2><Link href={`/research/${featured.slug}`}>{featured.title}</Link></h2><p>{featured.summary}</p><Link className="text-link" href={`/research/${featured.slug}`}>Review the brief →</Link></div>
       </section> : null}
 
       <section className="editorial-ledger" aria-labelledby="all-research-briefs">
         <header><div><p className="eyebrow">Research ledger</p><h2 id="all-research-briefs">Browse every brief</h2></div><p>Each row identifies the topic and protocol status before you open the full methods, limitations, sources, and related workflow path.</p></header>
         <div className="editorial-row-list">
-          {remaining.map((post, index) => <article className="editorial-row" key={post.slug}>
-            <span className="row-index">{String(index + 2).padStart(2, '0')}</span>
+          {remaining.map((post) => <article className="editorial-row" key={post.slug}>
             <div><span className="editorial-kicker">{post.cluster}{post.isProposedProtocol ? ' · Proposed protocol' : ''}</span><h3><Link href={`/research/${post.slug}`}>{post.title}</Link></h3><p>{post.summary}</p></div>
             <div className="row-meta"><time dateTime={post.publishedAt}>{displayArticleDate(post.publishedAt)}</time>{post.readTime ? <span>{post.readTime}</span> : null}<Link href={`/research/${post.slug}`}>Review brief →</Link></div>
           </article>)}

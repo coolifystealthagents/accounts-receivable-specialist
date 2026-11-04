@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { GeistSans } from 'geist/font/sans';
 import { Header, Footer } from '@/components/SiteChrome';
+import { TasteMotion } from '@/components/TasteMotion';
 import { site } from '@/lib/site';
 import './globals.css';
 
@@ -14,9 +16,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en" data-design={site.design}><body style={{ '--primary': site.primary, '--secondary': site.secondary, '--accent': site.accent, '--canvas': site.canvas, '--ink': site.ink, '--display': site.displayFont, '--body': site.bodyFont } as React.CSSProperties}>
+  return <html lang="en" data-design={site.design} className={GeistSans.variable}><body style={{ '--primary': site.primary, '--secondary': site.secondary, '--accent': site.accent, '--canvas': site.canvas, '--ink': site.ink, '--display': site.displayFont, '--body': 'var(--font-geist-sans)' } as React.CSSProperties}>
     <a className="skip-link" href="#main-content">Skip to main content</a>
-    <Header /><div id="main-content" tabIndex={-1}>{children}</div><Footer />
+    <Header /><div id="main-content" tabIndex={-1}>{children}</div><Footer /><TasteMotion />
     <Script id="acr-tracker-config" strategy="beforeInteractive">{`window.ACR_TRACKER_CONFIG={siteId:'${site.siteId}',endpoint:'/ingest/track',debug:false};`}</Script>
     <Script src="https://acrtracking.stealthagents.us/v1/tracker.js" strategy="afterInteractive" />
   </body></html>;

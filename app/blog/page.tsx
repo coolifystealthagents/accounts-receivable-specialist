@@ -18,7 +18,7 @@ export default function BlogPage() {
     <main className="editorial-library blog-library">
       <header className="index-photo-hero">
         <div><p className="eyebrow">Practical field notes</p><h1>Clearer roles. Better handoffs.</h1><p>Use practical guides to examine recurring receivables work without losing the distinction between preparation and accountable judgment.</p></div>
-        <div className="index-photo"><Image src="/images/blog-receivables-analysis.jpg" alt="Close view of a financial report being reviewed with a pen" fill priority sizes="(max-width: 900px) 100vw, 48vw" /></div>
+        <div className="index-photo" data-motion-image><Image src="/images/blog-receivables-analysis.jpg" alt="Close view of a financial report being reviewed with a pen" fill priority sizes="(max-width: 900px) 100vw, 48vw" /></div>
       </header>
 
       <section className="library-compass" aria-labelledby="blog-library">
@@ -27,15 +27,14 @@ export default function BlogPage() {
       </section>
 
       {featured ? <section className="featured-editorial">
-        <div className="featured-image"><Image src={featured.thumbnail!} width={1200} height={630} alt={`${featured.title} article cover`} /></div>
+        <div className="featured-image" data-motion-image><Image src={featured.thumbnail!} width={1200} height={630} alt={`${featured.title} article cover`} /></div>
         <div><p className="eyebrow">Latest field note</p><span className="editorial-kicker">{featured.category} · {displayArticleDate(featured.publishedAt)} · {featured.readTime}</span><h2><Link href={`/blog/${featured.slug}`}>{featured.title}</Link></h2><p>{featured.description}</p><Link className="text-link" href={`/blog/${featured.slug}`}>Read the latest guide →</Link></div>
       </section> : null}
 
       <section className="editorial-ledger" aria-labelledby="all-blog-guides">
         <header><div><p className="eyebrow">Field-note ledger</p><h2 id="all-blog-guides">Browse every practical guide</h2></div><p>Scan by topic, question, or publication date. Each row leads to a complete article with a visible contents guide and related service path.</p></header>
         <div className="editorial-row-list">
-          {remaining.map((post, index) => <article className="editorial-row" key={post.slug}>
-            <span className="row-index">{String(index + 2).padStart(2, '0')}</span>
+          {remaining.map((post) => <article className="editorial-row" key={post.slug}>
             <div><span className="editorial-kicker">{post.category}</span><h3><Link href={`/blog/${post.slug}`}>{post.title}</Link></h3><p>{post.description}</p></div>
             <div className="row-meta"><time dateTime={post.publishedAt}>{displayArticleDate(post.publishedAt)}</time><span>{post.readTime}</span><Link href={`/blog/${post.slug}`}>Read article →</Link></div>
           </article>)}

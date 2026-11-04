@@ -82,7 +82,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
       <div className="content-wrap article-layout">
         <article className="prose article-body">
           {post.sections.map((section, index) => (
-            <section className={`article-section article-section-${sectionFamilies[index % sectionFamilies.length]}`} data-section={String(index + 1).padStart(2, '0')} key={section.heading} aria-labelledby={articleSectionId(section.heading)}>
+            <section className={`article-section article-section-${sectionFamilies[index % sectionFamilies.length]}`} key={section.heading} aria-labelledby={articleSectionId(section.heading)}>
               <h2 id={articleSectionId(section.heading)}>{section.heading}</h2>
               {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               {index === 2 ? <p>Explore the <Link href={post.internalService}>related specialist service</Link> to define scope, ownership, and evidence.</p> : null}

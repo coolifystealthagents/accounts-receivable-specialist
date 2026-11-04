@@ -12,15 +12,15 @@ function Latest() { return <div className="article-grid">{blogPosts.slice(0, 3).
 
 export function HomePage() {
   const design = site.design;
-  return <main id="main-content" className={`home design-${design}`}>
+  return <main className={`home design-${design}`}>
     <section className="hero">
       <div className="hero-copy"><p className="eyebrow">{site.eyebrow}</p><h1>{site.hero} <em>{site.heroAccent}</em></h1><p className="hero-body">{site.heroBody}</p><div className="hero-actions"><CTA id="cta-home-hero-bookcall">Book a free consultation</CTA><Link className="quiet-link" href="/services">See specialist roles</Link></div><Principles /></div>
-      <div className="hero-visual"><Image src={site.heroImage} alt={site.heroAlt} fill priority sizes="(max-width: 900px) 100vw, 54vw" /><div className="hero-label"><SparkIcon /><span>{site.manifesto}</span></div></div>
+      <div className="hero-visual" data-motion-image><Image src={site.heroImage} alt={site.heroAlt} fill priority sizes="(max-width: 900px) 100vw, 54vw" /><div className="hero-label"><SparkIcon /><span>{site.manifesto}</span></div></div>
     </section>
     {design === 'signal' && <section className="signal-strip" aria-label="Inside sales workflow"><span>Prospecting support</span><span>CRM hygiene</span><span>Follow through</span><span>Pipeline visibility</span></section>}
     {design === 'conversation' && <section className="conversation-band"><div className="bubble one">Clear replies</div><div className="bubble two">Useful context</div><div className="bubble three">Thoughtful escalation</div></section>}
     <section className="section intro support-intro">
-      <div className="support-intro-visual">
+      <div className="support-intro-visual" data-motion-image>
         <Image src="/images/specialist-support-workflow.jpg" alt="Finance team reviewing reports and workflow notes around a laptop" fill sizes="(max-width: 900px) 90vw, 46vw" />
         <div className="control-ledger" aria-label="Receivables control ledger">
           <strong>Control ledger</strong>
@@ -34,7 +34,7 @@ export function HomePage() {
         <p className="eyebrow">Specialist support, shaped around your work</p>
         <h2>Build capacity without lowering the bar.</h2>
         <p>{site.manifesto} Your assistant works from documented priorities, clear decision rights, and a practical review rhythm.</p>
-        <p>The role is strongest when the source, owner, exception path, and close condition are visible in one place. That keeps routine preparation moving while financial judgment stays with the people authorized to make it.</p>
+        <p data-motion-copy>The role is strongest when the source, owner, exception path, and close condition are visible in one place. That keeps routine preparation moving while financial judgment stays with the people authorized to make it.</p>
         <Link className="text-link" href="/services">See how the service system works <ArrowIcon /></Link>
       </div>
     </section>
