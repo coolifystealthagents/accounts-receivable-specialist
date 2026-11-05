@@ -6,7 +6,6 @@ import { ArticleSidebar, type ArticleTocItem } from '@/components/ArticleSidebar
 import { articleSectionId, displayArticleDate, siteOrigin } from '@/lib/article';
 import { blogBySlug, blogPosts } from '@/lib/content';
 import { site } from '@/lib/site';
-import TocSync from '@/components/TocSync';
 
 const sectionFamilies = ['plain', 'split', 'ledger', 'signal'] as const;
 
@@ -64,7 +63,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   };
 
   return (
-    <main><TocSync />
+    <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }} />
       <header className="page-hero article-hero">
         <p className="eyebrow"><Link href="/blog">Blog</Link> / {post.category}</p>
