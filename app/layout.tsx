@@ -21,5 +21,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <Header /><div id="main-content" tabIndex={-1}>{children}</div><Footer /><TasteMotion />
     <Script id="acr-tracker-config" strategy="beforeInteractive">{`window.ACR_TRACKER_CONFIG={siteId:'${site.siteId}',endpoint:'/ingest/track',debug:false};`}</Script>
     <Script src="https://acrtracking.stealthagents.us/v1/tracker.js" strategy="afterInteractive" />
+    <Script
+      id="databull-analytics"
+      src="https://databull.stealthagents.us/js/script.js"
+      data-website-id="dc_n18z6c5ch0qkhp"
+      data-domain="accountsreceivablespecialist.com"
+      strategy="afterInteractive"
+    />
   </body></html>;
 }
