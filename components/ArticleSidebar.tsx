@@ -59,8 +59,8 @@ export function ArticleSidebar({
           <div><dt>Reading time</dt><dd>{readTime}</dd></div>
         </dl>
         <details className="article-toc" open>
-          <summary>On this page</summary>
-          <nav aria-label="On this page">
+          <summary>Table of contents</summary>
+          <nav aria-label="Table of contents">
             {items.map((item) => (
               <a
                 href={`#${item.id}`}
