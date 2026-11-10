@@ -1,9 +1,11 @@
 import { site } from './site';
 import type { BlogPost, ResearchPost } from './types';
+import { november10BlogPosts } from './november10-blog';
 import { november09BlogPosts } from './november09-blog';
 import { november08BlogPosts } from './november08-blog';
 import { november07BlogPosts } from './november07-blog';
 import { november06BlogPosts } from './november06-blog';
+import { november10ResearchPosts } from './november10-research';
 import { november09ResearchPosts } from './november09-research';
 import { november08ResearchPosts } from './november08-research';
 import { november07ResearchPosts } from './november07-research';
@@ -33,6 +35,7 @@ import { october28BlogPosts } from './october28-blog';
 import { october28ResearchPosts } from './october28-research';
 
 export const blogPosts: BlogPost[] = [
+  ...november10BlogPosts,
   ...november09BlogPosts,
   ...november08BlogPosts,
   ...november07BlogPosts,
@@ -517,6 +520,7 @@ blogPosts.unshift(...october13BlogPosts);
 blogPosts.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
 export const researchPosts: ResearchPost[] = [
+  ...november10ResearchPosts,
   ...november09ResearchPosts,
   ...november08ResearchPosts,
   ...november07ResearchPosts,
