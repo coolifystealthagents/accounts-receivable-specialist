@@ -2,13 +2,13 @@ import type { ResearchPost } from './types';
 
 export const november10ResearchPosts: readonly ResearchPost[] = [
   {
-    "slug": "how-often-does-a-cash-application-note-name-its-remittance-source-next-cycle",
+    "slug": "how-often-does-a-cash-application-note-name-its-remittance-source-in-the-next-cycle",
     "title": "How often does a cash application note name its remittance source in the next cycle?",
     "summary": "A proposed protocol for measuring whether a cash application note records the source behind the match The next cycle adds a review checkpoint and a clearer exception path.",
     "cluster": "Cash application",
     "publishedAt": "2026-11-10",
     "finding": "The study would test whether the note lets a reviewer reconstruct the match from its evidence The follow-up should state what changed in the record.",
-    "thumbnail": "/thumbnails/november-10/how-often-does-a-cash-application-note-name-its-remittance-source-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/how-often-does-a-cash-application-note-name-its-remittance-source-in-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Question and scope",
@@ -83,13 +83,13 @@ export const november10ResearchPosts: readonly ResearchPost[] = [
     ]
   },
   {
-    "slug": "what-share-of-collection-calls-happen-inside-the-customers-window-next-cycle",
+    "slug": "what-share-of-collection-calls-happen-inside-the-customer-s-window-in-the-next-cycle",
     "title": "What share of collection calls happen inside the customer's window in the next cycle?",
     "summary": "A proposed protocol for measuring whether collection calls are made within the promised window The next cycle adds a review checkpoint and a clearer exception path.",
     "cluster": "Collections workflow",
     "publishedAt": "2026-11-10",
     "finding": "The study would test whether the call window is a kept promise or a scheduling suggestion The follow-up should state what changed in the record.",
-    "thumbnail": "/thumbnails/november-10/what-share-of-collection-calls-happen-inside-the-customers-window-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/what-share-of-collection-calls-happen-inside-the-customer-s-window-in-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Question and scope",
@@ -164,13 +164,13 @@ export const november10ResearchPosts: readonly ResearchPost[] = [
     ]
   },
   {
-    "slug": "how-complete-is-the-credit-file-before-a-limit-change-next-cycle",
+    "slug": "how-complete-is-the-credit-file-before-a-limit-change-in-the-next-cycle",
     "title": "How complete is the credit file before a limit change in the next cycle?",
     "summary": "A proposed protocol for measuring whether a credit limit change is supported by a current file The next cycle adds a review checkpoint and a clearer exception path.",
     "cluster": "Credit",
     "publishedAt": "2026-11-10",
     "finding": "The study would test whether the limit change rests on evidence or on a sales request The follow-up should state what changed in the record.",
-    "thumbnail": "/thumbnails/november-10/how-complete-is-the-credit-file-before-a-limit-change-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/how-complete-is-the-credit-file-before-a-limit-change-in-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Question and scope",
@@ -245,13 +245,13 @@ export const november10ResearchPosts: readonly ResearchPost[] = [
     ]
   },
   {
-    "slug": "how-old-are-partial-payments-at-month-end-next-cycle",
+    "slug": "how-old-are-partial-payments-at-month-end-in-the-next-cycle",
     "title": "How old are partial payments at month end in the next cycle?",
     "summary": "A proposed protocol for measuring the age and ownership of unapplied partial payments The next cycle adds a review checkpoint and a clearer exception path.",
     "cluster": "Cash application",
     "publishedAt": "2026-11-10",
     "finding": "The study would test whether partial payments have an owner and a next step or sit in the unapplied cash account The follow-up should state what changed in the record.",
-    "thumbnail": "/thumbnails/november-10/how-old-are-partial-payments-at-month-end-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/how-old-are-partial-payments-at-month-end-in-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Question and scope",
@@ -326,13 +326,13 @@ export const november10ResearchPosts: readonly ResearchPost[] = [
     ]
   },
   {
-    "slug": "can-an-ar-aging-decision-be-reproduced-from-its-evidence-next-cycle",
+    "slug": "can-an-ar-aging-decision-be-reproduced-from-its-evidence-in-the-next-cycle",
     "title": "Can an AR aging decision be reproduced from its evidence in the next cycle?",
     "summary": "A proposed protocol for testing whether an aging decision names the account, the evidence, the owner, and the action The next cycle adds a review checkpoint and a clearer exception path.",
     "cluster": "Aging analysis",
     "publishedAt": "2026-11-10",
     "finding": "The study would test whether the aging review is a decision record or a discussion that cannot be reconstructed The follow-up should state what changed in the record.",
-    "thumbnail": "/thumbnails/november-10/can-an-ar-aging-decision-be-reproduced-from-its-evidence-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/can-an-ar-aging-decision-be-reproduced-from-its-evidence-in-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Question and scope",
@@ -407,13 +407,13 @@ export const november10ResearchPosts: readonly ResearchPost[] = [
     ]
   },
   {
-    "slug": "how-consistent-is-dunning-suppression-across-disputes-next-cycle",
+    "slug": "how-consistent-is-dunning-suppression-across-disputes-in-the-next-cycle",
     "title": "How consistent is dunning suppression across disputes in the next cycle?",
     "summary": "A proposed protocol for comparing how different collectors pause a dunning sequence when a dispute is raised The next cycle adds a review checkpoint and a clearer exception path.",
     "cluster": "Collections workflow",
     "publishedAt": "2026-11-10",
     "finding": "The study would test whether the stop rule is applied the same way or depends on the collector The follow-up should state what changed in the record.",
-    "thumbnail": "/thumbnails/november-10/how-consistent-is-dunning-suppression-across-disputes-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/how-consistent-is-dunning-suppression-across-disputes-in-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Question and scope",
@@ -488,13 +488,13 @@ export const november10ResearchPosts: readonly ResearchPost[] = [
     ]
   },
   {
-    "slug": "where-does-delay-accumulate-in-a-cash-application-next-cycle",
+    "slug": "where-does-delay-accumulate-in-a-cash-application-in-the-next-cycle",
     "title": "Where does delay accumulate in a cash application in the next cycle?",
     "summary": "A proposed protocol for separating the receipt wait, the match wait, and the review wait in cash application The next cycle adds a review checkpoint and a clearer exception path.",
     "cluster": "Cash application",
     "publishedAt": "2026-11-10",
     "finding": "The study would test whether cash application delay comes from the bank, the match, or the review The follow-up should state what changed in the record.",
-    "thumbnail": "/thumbnails/november-10/where-does-delay-accumulate-in-a-cash-application-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/where-does-delay-accumulate-in-a-cash-application-in-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Question and scope",

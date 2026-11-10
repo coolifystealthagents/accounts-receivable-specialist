@@ -2,13 +2,13 @@ import type { BlogPost } from './types';
 
 export const november10BlogPosts: readonly BlogPost[] = [
   {
-    "slug": "write-a-cash-application-note-that-names-the-remittance-source-next-cycle",
+    "slug": "write-a-cash-application-note-that-names-the-remittance-source-for-the-next-cycle",
     "title": "Write a cash application note that names the remittance source for the next cycle",
     "description": "A cash application note that records the payer, the remittance source, the invoice match, and the unresolved balance Revisit the rule with one current example before the next cycle.",
     "category": "Accounts receivable",
     "publishedAt": "2026-11-10",
     "readTime": "8 min read",
-    "thumbnail": "/thumbnails/november-10/write-a-cash-application-note-that-names-the-remittance-source-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/write-a-cash-application-note-that-names-the-remittance-source-for-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Why the remittance source belongs in the note",
@@ -71,13 +71,13 @@ export const november10BlogPosts: readonly BlogPost[] = [
     }
   },
   {
-    "slug": "set-a-collections-call-window-the-customer-can-plan-around-next-cycle",
+    "slug": "set-a-collections-call-window-the-customer-can-plan-around-for-the-next-cycle",
     "title": "Set a collections call window the customer can plan around for the next cycle",
     "description": "A call window that names the time zone, the contact preference, and the fallback when the customer cannot answer Revisit the rule with one current example before the next cycle.",
     "category": "Accounts receivable",
     "publishedAt": "2026-11-10",
     "readTime": "8 min read",
-    "thumbnail": "/thumbnails/november-10/set-a-collections-call-window-the-customer-can-plan-around-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/set-a-collections-call-window-the-customer-can-plan-around-for-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Why a call window matters",
@@ -140,13 +140,13 @@ export const november10BlogPosts: readonly BlogPost[] = [
     }
   },
   {
-    "slug": "build-a-customer-credit-file-review-before-the-limit-changes-next-cycle",
+    "slug": "build-a-customer-credit-file-review-before-the-limit-changes-for-the-next-cycle",
     "title": "Build a customer credit file review before the limit changes for the next cycle",
     "description": "A credit file review that records the payment history, the current exposure, the evidence, and the approver Revisit the rule with one current example before the next cycle.",
     "category": "Accounts receivable",
     "publishedAt": "2026-11-10",
     "readTime": "8 min read",
-    "thumbnail": "/thumbnails/november-10/build-a-customer-credit-file-review-before-the-limit-changes-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/build-a-customer-credit-file-review-before-the-limit-changes-for-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Why the credit file review comes first",
@@ -209,13 +209,13 @@ export const november10BlogPosts: readonly BlogPost[] = [
     }
   },
   {
-    "slug": "track-a-partial-payment-across-two-invoices-without-splitting-the-ledger-next-cycle",
+    "slug": "track-a-partial-payment-across-two-invoices-without-splitting-the-ledger-for-the-next-cycle",
     "title": "Track a partial payment across two invoices without splitting the ledger for the next cycle",
     "description": "A partial payment record that keeps the original receipt, the allocation, and the open balance tied together Revisit the rule with one current example before the next cycle.",
     "category": "Accounts receivable",
     "publishedAt": "2026-11-10",
     "readTime": "8 min read",
-    "thumbnail": "/thumbnails/november-10/track-a-partial-payment-across-two-invoices-without-splitting-the-ledger-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/track-a-partial-payment-across-two-invoices-without-splitting-the-ledger-for-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Why the allocation needs a record",
@@ -278,13 +278,13 @@ export const november10BlogPosts: readonly BlogPost[] = [
     }
   },
   {
-    "slug": "prepare-an-ar-aging-review-that-ends-in-one-decision-next-cycle",
+    "slug": "prepare-an-ar-aging-review-that-ends-in-one-decision-for-the-next-cycle",
     "title": "Prepare an AR aging review that ends in one decision for the next cycle",
     "description": "An aging review that uses evidence, owners, and next actions to decide which accounts need help this week Revisit the rule with one current example before the next cycle.",
     "category": "Accounts receivable",
     "publishedAt": "2026-11-10",
     "readTime": "8 min read",
-    "thumbnail": "/thumbnails/november-10/prepare-an-ar-aging-review-that-ends-in-one-decision-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/prepare-an-ar-aging-review-that-ends-in-one-decision-for-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Why the aging review needs a decision",
@@ -347,13 +347,13 @@ export const november10BlogPosts: readonly BlogPost[] = [
     }
   },
   {
-    "slug": "design-a-dunning-sequence-that-stops-on-a-dispute-next-cycle",
+    "slug": "design-a-dunning-sequence-that-stops-on-a-dispute-for-the-next-cycle",
     "title": "Design a dunning sequence that stops on a dispute for the next cycle",
     "description": "A dunning sequence that pauses on a dispute, records the reason, and resumes only with an approved decision Revisit the rule with one current example before the next cycle.",
     "category": "Accounts receivable",
     "publishedAt": "2026-11-10",
     "readTime": "8 min read",
-    "thumbnail": "/thumbnails/november-10/design-a-dunning-sequence-that-stops-on-a-dispute-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/design-a-dunning-sequence-that-stops-on-a-dispute-for-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Why the sequence needs a stop rule",
@@ -416,13 +416,13 @@ export const november10BlogPosts: readonly BlogPost[] = [
     }
   },
   {
-    "slug": "keep-a-cash-forecast-tied-to-the-collection-calendar-next-cycle",
+    "slug": "keep-a-cash-forecast-tied-to-the-collection-calendar-for-the-next-cycle",
     "title": "Keep a cash forecast tied to the collection calendar for the next cycle",
     "description": "A cash forecast that links each expected receipt to a dated collection action and a confidence level Revisit the rule with one current example before the next cycle.",
     "category": "Accounts receivable",
     "publishedAt": "2026-11-10",
     "readTime": "8 min read",
-    "thumbnail": "/thumbnails/november-10/keep-a-cash-forecast-tied-to-the-collection-calendar-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/keep-a-cash-forecast-tied-to-the-collection-calendar-for-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Why the forecast needs the collection calendar",
@@ -485,13 +485,13 @@ export const november10BlogPosts: readonly BlogPost[] = [
     }
   },
   {
-    "slug": "plan-a-monthly-ar-close-review-on-evidence-next-cycle",
+    "slug": "plan-a-monthly-ar-close-review-on-evidence-for-the-next-cycle",
     "title": "Plan a monthly AR close review on evidence for the next cycle",
     "description": "A short monthly review that turns unapplied cash, disputes, and promises into decisions and owners Revisit the rule with one current example before the next cycle.",
     "category": "Accounts receivable",
     "publishedAt": "2026-11-10",
     "readTime": "8 min read",
-    "thumbnail": "/thumbnails/november-10/plan-a-monthly-ar-close-review-on-evidence-next-cycle.webp",
+    "thumbnail": "/thumbnails/november-10/plan-a-monthly-ar-close-review-on-evidence-for-the-next-cycle.webp",
     "sections": [
       {
         "heading": "Why the AR close review needs a decision",
