@@ -28,7 +28,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Set the authority boundary",
         "paragraphs": [
-          "When month-end AR reconciliation sign-off changes a record in the ERP ledger, the the AR manager approves and the preparer records the action; the two roles stay separate. Approval, payment, records disposition, and policy exceptions stay with the named owner. A delegation needs a scope, a limit, an end date, and a named backup. The record should show the source, the decision, and the surviving value in one place. A sample month-end AR reconciliation sign-off review checks the bank statement close balance, the AR aging export, and the surviving value in the ERP ledger.",
+          "When month-end AR reconciliation sign-off changes a record in the ERP ledger, the AR manager approves and the preparer records the action; the two roles stay separate. Approval, payment, records disposition, and policy exceptions stay with the named owner. A delegation needs a scope, a limit, an end date, and a named backup. The record should show the source, the decision, and the surviving value in one place. A sample month-end AR reconciliation sign-off review checks the bank statement close balance, the AR aging export, and the surviving value in the ERP ledger.",
           "Use the same definition across the queue and the review so the counts agree. A delegation needs a scope, a limit, an end date, and a named backup. Name the backup owner and the coverage window in advance. A case that moves between owners should keep both owner periods visible. Apply the same month-end AR reconciliation sign-off test to the general ledger control account and to the value that survives in the ERP ledger.",
           "The record should show the source, the decision, and the surviving value in one place. Name the owner for every open item, including items waiting on someone else. Do not let a deadline expand a role beyond its written limit. The next reviewer should not have to ask which document is authoritative. The month-end AR reconciliation sign-off record should let a second reviewer rebuild the decision from the AR aging export and the general ledger control account."
         ]
@@ -36,7 +36,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Run the daily handoff",
         "paragraphs": [
-          "Each morning the team reviews month-end AR reconciliation sign-off arrivals, items waiting on the the AR manager, and items ready for a verified close. A case with no next action is an exception even if it says in progress. Log the handoff time when a case crosses a shift. Leave the next shift a queue that needs no chat history. For month-end AR reconciliation sign-off, compare the bank statement close balance with the destination value rather than relying on a status label.",
+          "Each morning the team reviews month-end AR reconciliation sign-off arrivals, items waiting on the AR manager, and items ready for a verified close. A case with no next action is an exception even if it says in progress. Log the handoff time when a case crosses a shift. Leave the next shift a queue that needs no chat history. For month-end AR reconciliation sign-off, compare the bank statement close balance with the destination value rather than relying on a status label.",
           "Record one next action and one due time per open item. Use the same definition across the queue and the review so the counts agree. Name the owner for every open item, including items waiting on someone else. Keep the original request so a later correction does not erase the reason for the work. The month-end AR reconciliation sign-off close note cites the ERP ledger, the approver, and the time of the final check.",
           "Use the same definition across the queue and the review so the counts agree. A clean-looking status is not evidence that the underlying work is correct. The next reviewer should not have to ask which document is authoritative. A handoff is complete only when the receiver acknowledges it. The month-end AR reconciliation sign-off case note should show what the ERP ledger held at the time and who reviewed it."
         ]
@@ -44,7 +44,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Handle exceptions without rewriting history",
         "paragraphs": [
-          "When the aging total and the general ledger balance differ by an unexplained amount, preserve both versions, record the observation times, and route one answerable question to the the AR manager. Record who released the dependent action and when. The record should show the source, the decision, and the surviving value in one place. A case that moves between owners should keep both owner periods visible. For month-end AR reconciliation sign-off, the working file keeps the bank statement close balance and the AR aging export beside the decision note.",
+          "When the aging total and the general ledger balance differ by an unexplained amount, preserve both versions, record the observation times, and route one answerable question to the AR manager. Record who released the dependent action and when. The record should show the source, the decision, and the surviving value in one place. A case that moves between owners should keep both owner periods visible. For month-end AR reconciliation sign-off, the working file keeps the bank statement close balance and the AR aging export beside the decision note.",
           "Separate a data conflict from a policy conflict. Check whether the exception came from a form, a rule, or a permission. The record should show the source, the decision, and the surviving value in one place. Route one bounded question to the owner instead of negotiating in the queue. Every month-end AR reconciliation sign-off handoff names the AR manager and the field in the ERP ledger that will confirm the change.",
           "Keep the original request so a later correction does not erase the reason for the work. A clean-looking status is not evidence that the underlying work is correct. Check whether the exception came from a form, a rule, or a permission. Keep the failed attempt and the correction in the same history. In the month-end AR reconciliation sign-off queue, an item without a next action is treated as an exception."
         ]
@@ -77,7 +77,7 @@ export const november12BlogPosts: BlogPost[] = [
     "faq": [
       {
         "q": "Who approves a month-end AR reconciliation sign-off exception?",
-        "a": "The the AR manager approves; the assistant prepares the evidence."
+        "a": "The AR manager approves; the assistant prepares the evidence."
       },
       {
         "q": "What closes a month-end AR reconciliation sign-off case?",
@@ -111,7 +111,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Map the source and the evidence trail",
         "paragraphs": [
-          "A reviewer should be able to rebuild customer credit limit review from the open orders report, the approval memo, and the the credit system record without asking for a private screenshot. Record the export time beside any value taken from a system. Mark missing evidence as missing, with a reason, rather than leaving a blank. The record should show the source, the decision, and the surviving value in one place. A sample customer credit limit review review checks the current credit application, the twelve-month payment history, and the surviving value in the credit system.",
+          "A reviewer should be able to rebuild customer credit limit review from the open orders report, the approval memo, and the credit system record without asking for a private screenshot. Record the export time beside any value taken from a system. Mark missing evidence as missing, with a reason, rather than leaving a blank. The record should show the source, the decision, and the surviving value in one place. A sample customer credit limit review checks the current credit application, the twelve-month payment history, and the surviving value in the credit system.",
           "Use the same definition across the queue and the review so the counts agree. Mark missing evidence as missing, with a reason, rather than leaving a blank. Use the same case key in the queue and in the evidence extract. A case that moves between owners should keep both owner periods visible. Apply the same customer credit limit review test to the open orders report and to the value that survives in the credit system.",
           "The record should show the source, the decision, and the surviving value in one place. Name the owner for every open item, including items waiting on someone else. Do not let a deadline expand a role beyond its written limit. The next reviewer should not have to ask which document is authoritative. The customer credit limit review record should let a second reviewer rebuild the decision from the twelve-month payment history and the open orders report."
         ]
@@ -145,13 +145,13 @@ export const november12BlogPosts: BlogPost[] = [
         "paragraphs": [
           "If customer credit limit review hands work to another team, keep it open until that team acknowledges receipt and the surviving record is confirmed. The next reviewer should not have to ask which document is authoritative. Use the same definition across the queue and the review so the counts agree. Reopen the case when the destination value is disputed. Apply the same customer credit limit review test to the open orders report and to the value that survives in the credit system.",
           "The next reviewer should not have to ask which document is authoritative. Use the same definition across the queue and the review so the counts agree. Verify that the surviving record is the one downstream teams will use. Tie the close note to the original request and the final evidence. The customer credit limit review record should let a second reviewer rebuild the decision from the twelve-month payment history and the open orders report.",
-          "A clean-looking status is not evidence that the underlying work is correct. Record the close reason with the same codes used in the exception queue. A closed status is not proof that the destination changed. Do not let a deadline expand a role beyond its written limit. A sample customer credit limit review review checks the current credit application, the twelve-month payment history, and the surviving value in the credit system."
+          "A clean-looking status is not evidence that the underlying work is correct. Record the close reason with the same codes used in the exception queue. A closed status is not proof that the destination changed. Do not let a deadline expand a role beyond its written limit. A sample customer credit limit review checks the current credit application, the twelve-month payment history, and the surviving value in the credit system."
         ]
       },
       {
         "heading": "Review the pattern, not only the case",
         "paragraphs": [
-          "The customer credit limit review review should separate the ordinary case, the reopened case, the missing-evidence case, and the cross-owner handoff. Record the sample frame, the reviewer, and the criteria. Name the owner for every open item, including items waiting on someone else. A case that moves between owners should keep both owner periods visible. The customer credit limit review close note cites the credit system, the approver, and the time of the final check.",
+          "The customer credit limit review should separate the ordinary case, the reopened case, the missing-evidence case, and the cross-owner handoff. Record the sample frame, the reviewer, and the criteria. Name the owner for every open item, including items waiting on someone else. A case that moves between owners should keep both owner periods visible. The customer credit limit review close note cites the credit system, the approver, and the time of the final check.",
           "Do not let a deadline expand a role beyond its written limit. Choose the sample from the export before the meeting. The record should show the source, the decision, and the surviving value in one place. Report a null result as clearly as a positive one. The customer credit limit review case note should show what the credit system held at the time and who reviewed it.",
           "Choose the sample from the export before the meeting. If the team cannot reproduce the result from the record, the control is not finished. The record should show the source, the decision, and the surviving value in one place. Report a null result as clearly as a positive one. For customer credit limit review, compare the current credit application with the destination value rather than relying on a status label."
         ]
@@ -168,7 +168,7 @@ export const november12BlogPosts: BlogPost[] = [
     "faq": [
       {
         "q": "Who approves a customer credit limit review exception?",
-        "a": "The the credit manager approves; the assistant prepares the evidence."
+        "a": "The credit manager approves; the assistant prepares the evidence."
       },
       {
         "q": "What closes a customer credit limit review case?",
@@ -210,7 +210,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Set the authority boundary",
         "paragraphs": [
-          "The the dispute lead owns the decision in chargeback response file; the preparer may compare, label, and route but may not approve the outcome. Write the authority limit into the case template. The record should show the source, the decision, and the surviving value in one place. A case that moves between owners should keep both owner periods visible. For chargeback response file, the working file keeps the transaction receipt and the delivery confirmation beside the decision note.",
+          "The dispute lead owns the decision in chargeback response file; the preparer may compare, label, and route but may not approve the outcome. Write the authority limit into the case template. The record should show the source, the decision, and the surviving value in one place. A case that moves between owners should keep both owner periods visible. For chargeback response file, the working file keeps the transaction receipt and the delivery confirmation beside the decision note.",
           "Do not let a familiar requester bypass the approval boundary. If two roles share a queue, mark which one decides each item. The record should show the source, the decision, and the surviving value in one place. Approval, payment, records disposition, and policy exceptions stay with the named owner. Every chargeback response file handoff names the dispute lead and the field in the card network portal that will confirm the change.",
           "Keep the original request so a later correction does not erase the reason for the work. A clean-looking status is not evidence that the underlying work is correct. If two roles share a queue, mark which one decides each item. A role change should trigger a review of queue access. In the chargeback response file queue, an item without a next action is treated as an exception."
         ]
@@ -259,7 +259,7 @@ export const november12BlogPosts: BlogPost[] = [
     "faq": [
       {
         "q": "Who approves a chargeback response file exception?",
-        "a": "The the dispute lead approves; the assistant prepares the evidence."
+        "a": "The dispute lead approves; the assistant prepares the evidence."
       },
       {
         "q": "What closes a chargeback response file case?",
@@ -301,7 +301,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Set the authority boundary",
         "paragraphs": [
-          "A standing instruction for promise-to-pay tracking across invoices needs a limit and an expiry, and the the collections lead should confirm it is still current. Preparation, comparison, and follow-up may sit with the assistant. A case that moves between owners should keep both owner periods visible. Record rejected and deferred requests as well as approvals. A promise-to-pay tracking across invoices exception keeps the follow-up task attached and routes the question to the collections lead.",
+          "A standing instruction for promise-to-pay tracking across invoices needs a limit and an expiry, and the collections lead should confirm it is still current. Preparation, comparison, and follow-up may sit with the assistant. A case that moves between owners should keep both owner periods visible. Record rejected and deferred requests as well as approvals. A promise-to-pay tracking across invoices exception keeps the follow-up task attached and routes the question to the collections lead.",
           "When urgency presses against the limit, pause and route the decision. Write the authority limit into the case template. A case that moves between owners should keep both owner periods visible. If two roles share a queue, mark which one decides each item. In this promise-to-pay tracking across invoices case, the record points to the collections queue and names the collections lead as the decision owner.",
           "A role change should trigger a review of queue access. A complete packet is not an approval; the decision needs a person and a timestamp. A case that moves between owners should keep both owner periods visible. Approval, payment, records disposition, and policy exceptions stay with the named owner. The promise-to-pay tracking across invoices reviewer records the follow-up task, the owner, and the next action in one place."
         ]
@@ -350,7 +350,7 @@ export const november12BlogPosts: BlogPost[] = [
     "faq": [
       {
         "q": "Who approves a promise-to-pay tracking across invoices exception?",
-        "a": "The the collections lead approves; the assistant prepares the evidence."
+        "a": "The collections lead approves; the assistant prepares the evidence."
       },
       {
         "q": "What closes a promise-to-pay tracking across invoices case?",
@@ -392,7 +392,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Set the authority boundary",
         "paragraphs": [
-          "When refund approval note changes a record in the billing system, the the billing supervisor approves and the preparer records the action; the two roles stay separate. The next reviewer should not have to ask which document is authoritative. Use the same definition across the queue and the review so the counts agree. When urgency presses against the limit, pause and route the decision. Apply the same refund approval note test to the refund request and to the value that survives in the billing system.",
+          "When refund approval note changes a record in the billing system, the billing supervisor approves and the preparer records the action; the two roles stay separate. The next reviewer should not have to ask which document is authoritative. Use the same definition across the queue and the review so the counts agree. When urgency presses against the limit, pause and route the decision. Apply the same refund approval note test to the refund request and to the value that survives in the billing system.",
           "The next reviewer should not have to ask which document is authoritative. Use the same definition across the queue and the review so the counts agree. Do not let a familiar requester bypass the approval boundary. Record rejected and deferred requests as well as approvals. The refund approval note record should let a second reviewer rebuild the decision from the credit memo and the refund request.",
           "A clean-looking status is not evidence that the underlying work is correct. A role change should trigger a review of queue access. A delegation needs a scope, a limit, an end date, and a named backup. Do not let a deadline expand a role beyond its written limit. A sample refund approval note review checks the original invoice, the credit memo, and the surviving value in the billing system."
         ]
@@ -400,7 +400,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Run the daily handoff",
         "paragraphs": [
-          "Each morning the team reviews refund approval note arrivals, items waiting on the the billing supervisor, and items ready for a verified close. A case with no next action is an exception even if it says in progress. Name the owner for every open item, including items waiting on someone else. A case that moves between owners should keep both owner periods visible. The refund approval note close note cites the billing system, the approver, and the time of the final check.",
+          "Each morning the team reviews refund approval note arrivals, items waiting on the billing supervisor, and items ready for a verified close. A case with no next action is an exception even if it says in progress. Name the owner for every open item, including items waiting on someone else. A case that moves between owners should keep both owner periods visible. The refund approval note close note cites the billing system, the approver, and the time of the final check.",
           "Do not let a deadline expand a role beyond its written limit. Open the day with a queue pass by age, owner, and missing evidence. The record should show the source, the decision, and the surviving value in one place. Leave the next shift a queue that needs no chat history. The refund approval note case note should show what the billing system held at the time and who reviewed it.",
           "Open the day with a queue pass by age, owner, and missing evidence. If the team cannot reproduce the result from the record, the control is not finished. The record should show the source, the decision, and the surviving value in one place. Leave the next shift a queue that needs no chat history. For refund approval note, compare the original invoice with the destination value rather than relying on a status label."
         ]
@@ -408,7 +408,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Handle exceptions without rewriting history",
         "paragraphs": [
-          "When the refund is approved without a matching credit memo, preserve both versions, record the observation times, and route one answerable question to the the billing supervisor. Record who released the dependent action and when. Check whether the exception came from a form, a rule, or a permission. A short written rule is easier to test than an unwritten habit. Every refund approval note handoff names the billing supervisor and the field in the billing system that will confirm the change.",
+          "When the refund is approved without a matching credit memo, preserve both versions, record the observation times, and route one answerable question to the billing supervisor. Record who released the dependent action and when. Check whether the exception came from a form, a rule, or a permission. A short written rule is easier to test than an unwritten habit. Every refund approval note handoff names the billing supervisor and the field in the billing system that will confirm the change.",
           "If the team cannot reproduce the result from the record, the control is not finished. A case that moves between owners should keep both owner periods visible. Do not rewrite the earlier record to match the later answer. Check whether the exception came from a form, a rule, or a permission. In the refund approval note queue, an item without a next action is treated as an exception.",
           "If the exception repeats, give it a reason code. The next reviewer should not have to ask which document is authoritative. Keep the failed attempt and the correction in the same history. Route one bounded question to the owner instead of negotiating in the queue. For refund approval note, the working file keeps the original invoice and the credit memo beside the decision note."
         ]
@@ -441,7 +441,7 @@ export const november12BlogPosts: BlogPost[] = [
     "faq": [
       {
         "q": "Who approves a refund approval note exception?",
-        "a": "The the billing supervisor approves; the assistant prepares the evidence."
+        "a": "The billing supervisor approves; the assistant prepares the evidence."
       },
       {
         "q": "What closes a refund approval note case?",
@@ -475,7 +475,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Map the source and the evidence trail",
         "paragraphs": [
-          "A reviewer should be able to rebuild bad debt reserve readout from the write-off history, the assumptions note, and the the finance workbook record without asking for a private screenshot. The next reviewer should not have to ask which document is authoritative. Use the same definition across the queue and the review so the counts agree. Compare the source and the destination values before drawing a conclusion. Apply the same bad debt reserve readout test to the write-off history and to the value that survives in the finance workbook.",
+          "A reviewer should be able to rebuild bad debt reserve readout from the write-off history, the assumptions note, and the finance workbook record without asking for a private screenshot. The next reviewer should not have to ask which document is authoritative. Use the same definition across the queue and the review so the counts agree. Compare the source and the destination values before drawing a conclusion. Apply the same bad debt reserve readout test to the write-off history and to the value that survives in the finance workbook.",
           "The next reviewer should not have to ask which document is authoritative. Use the same definition across the queue and the review so the counts agree. Record who supplied each document and when it arrived. Preserve a conflicting value instead of overwriting the first one. The bad debt reserve readout record should let a second reviewer rebuild the decision from the prior reserve balance and the write-off history.",
           "A clean-looking status is not evidence that the underlying work is correct. Name the repository where sensitive evidence is held. Mark missing evidence as missing, with a reason, rather than leaving a blank. Do not let a deadline expand a role beyond its written limit. A sample bad debt reserve readout review checks the aging buckets by risk class, the prior reserve balance, and the surviving value in the finance workbook."
         ]
@@ -532,7 +532,7 @@ export const november12BlogPosts: BlogPost[] = [
     "faq": [
       {
         "q": "Who approves a bad debt reserve readout exception?",
-        "a": "The the controller approves; the assistant prepares the evidence."
+        "a": "The controller approves; the assistant prepares the evidence."
       },
       {
         "q": "What closes a bad debt reserve readout case?",
@@ -574,7 +574,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Set the authority boundary",
         "paragraphs": [
-          "The the cash application lead owns the decision in remittance email intake; the preparer may compare, label, and route but may not approve the outcome. Write the authority limit into the case template. If two roles share a queue, mark which one decides each item. A short written rule is easier to test than an unwritten habit. Every remittance email intake handoff names the cash application lead and the field in the shared inbox that will confirm the change.",
+          "The cash application lead owns the decision in remittance email intake; the preparer may compare, label, and route but may not approve the outcome. Write the authority limit into the case template. If two roles share a queue, mark which one decides each item. A short written rule is easier to test than an unwritten habit. Every remittance email intake handoff names the cash application lead and the field in the shared inbox that will confirm the change.",
           "If the team cannot reproduce the result from the record, the control is not finished. A case that moves between owners should keep both owner periods visible. A complete packet is not an approval; the decision needs a person and a timestamp. If two roles share a queue, mark which one decides each item. In the remittance email intake queue, an item without a next action is treated as an exception.",
           "When urgency presses against the limit, pause and route the decision. The next reviewer should not have to ask which document is authoritative. A role change should trigger a review of queue access. Approval, payment, records disposition, and policy exceptions stay with the named owner. For remittance email intake, the working file keeps the mailbox intake log and the remittance attachment beside the decision note."
         ]
@@ -623,7 +623,7 @@ export const november12BlogPosts: BlogPost[] = [
     "faq": [
       {
         "q": "Who approves a remittance email intake exception?",
-        "a": "The the cash application lead approves; the assistant prepares the evidence."
+        "a": "The cash application lead approves; the assistant prepares the evidence."
       },
       {
         "q": "What closes a remittance email intake case?",
@@ -665,7 +665,7 @@ export const november12BlogPosts: BlogPost[] = [
       {
         "heading": "Set the authority boundary",
         "paragraphs": [
-          "A standing instruction for duplicate invoice audit needs a limit and an expiry, and the the billing manager should confirm it is still current. Write the authority limit into the case template. The record should show the source, the decision, and the surviving value in one place. Name the owner for every open item, including items waiting on someone else. In this duplicate invoice audit case, the record points to the billing system and names the billing manager as the decision owner.",
+          "A standing instruction for duplicate invoice audit needs a limit and an expiry, and the billing manager should confirm it is still current. Write the authority limit into the case template. The record should show the source, the decision, and the surviving value in one place. Name the owner for every open item, including items waiting on someone else. In this duplicate invoice audit case, the record points to the billing system and names the billing manager as the decision owner.",
           "Preparation, comparison, and follow-up may sit with the assistant. Record rejected and deferred requests as well as approvals. Write the authority limit into the case template. If two roles share a queue, mark which one decides each item. The duplicate invoice audit reviewer records the exception list, the owner, and the next action in one place.",
           "A short written rule is easier to test than an unwritten habit. A delegation needs a scope, a limit, an end date, and a named backup. Name the backup owner and the coverage window in advance. If two roles share a queue, mark which one decides each item. A duplicate invoice audit exception keeps the exception list attached and routes the question to the billing manager."
         ]
@@ -714,7 +714,7 @@ export const november12BlogPosts: BlogPost[] = [
     "faq": [
       {
         "q": "Who approves a duplicate invoice audit exception?",
-        "a": "The the billing manager approves; the assistant prepares the evidence."
+        "a": "The billing manager approves; the assistant prepares the evidence."
       },
       {
         "q": "What closes a duplicate invoice audit case?",
