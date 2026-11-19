@@ -28,7 +28,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <div className="service-hero-image"><Image src={site.heroImage} alt={site.heroAlt} fill priority sizes="(max-width: 800px) 100vw, 42vw" /></div>
     </header>
     <div className="detail-layout">
-      <aside className="detail-nav" aria-label="On this page"><strong>Service brief</strong><a href="#problem">Operating problem</a><a href="#scope">Scope and inputs</a><a href="#workflow">Workflow and outputs</a><a href="#decisions">Human decisions</a><a href="#quality">Quality controls</a><a href="#scenarios">Scenarios</a><a href="#faq">Questions</a></aside>
       <article className="service-detail">
         <section id="problem" className="detail-section"><p className="eyebrow">The operating problem</p><h2>Make recurring work visible before it becomes urgent.</h2><p>{service.problem}</p><p>The role adds structured preparation and coordination. It does not transfer financial authority. Your named owner receives consistent records, explicit exceptions, and a usable next action.</p></section>
         <div id="scope" className="detail-pair"><ListSection title="Work in scope" items={service.scope} /><ListSection title="Inputs the role needs" items={service.inputs} /></div>
@@ -41,7 +40,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="detail-section"><p className="eyebrow">Related services</p><h2>Connect adjacent receivables workflows.</h2><div className="related-links">{related.map(item => item && <Link href={`/services/${item.slug}`} key={item.slug}><strong>{item.name}</strong><span>{item.short}</span></Link>)}</div></section>
       </article>
     </div>
-    <section className="closing"><p className="eyebrow">Start with one controlled queue</p><h2>Build a role your finance team can review and trust.</h2><p>Bring the current workflow, owners, inputs, exceptions, and completion standard. We will help define the support boundary.</p><Link className="button primary" href="/contact-us">Book a free consultation</Link></section>
+    <section className="closing service-trust-closing">
+      <div className="closing-copy"><p className="eyebrow">Start with one controlled queue</p><h2>Build a role your finance team can review and trust.</h2><p>Bring the current workflow, owners, inputs, exceptions, and completion standard. We will help define the support boundary.</p><Link className="button primary" href="/contact-us">Book a free consultation</Link></div>
+      <div className="closing-image" data-motion-image><Image src="/images/finance-review-trust.svg" alt="Finance professionals reviewing invoice and reconciliation records together" fill sizes="(max-width: 900px) 100vw, 42vw" /></div>
+    </section>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
   </main>;
 }
