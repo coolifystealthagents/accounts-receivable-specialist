@@ -1,28 +1,187 @@
 import type { Service, SiteConfig } from './types';
 
+type ServiceDetail = Pick<Service, 'problemHeading' | 'outcomeHeading' | 'outcome' | 'workflowHeading' | 'workflow' | 'boundaries' | 'qualityHeading' | 'quality' | 'faq'>;
+
+const serviceDetails: Record<string, ServiceDetail> = {
+  'invoice-preparation': {
+    problemHeading: 'Invoice drafts stall when their source records do not agree.',
+    outcomeHeading: 'A draft the billing owner can verify.',
+    outcome: 'The billing owner receives a draft tied to its order, service, rate, customer, and delivery evidence, with missing or conflicting inputs clearly flagged.',
+    workflowHeading: 'Prepare a draft the billing owner can verify.',
+    workflow: [
+      'Confirm the customer, billing period, approved order or contract, and current rate source for the invoice batch.',
+      'Compare draft fields with those approved records; record a mismatch instead of changing pricing or tax treatment.',
+      'Attach service, fulfillment, and delivery evidence, then label any missing or conflicting detail.',
+      'Route complete drafts and exceptions to the billing owner and record whether each item is accepted, revised, or held.'
+    ],
+    boundaries: [
+      'Prepare invoice drafts only; authorized billing staff decide when an invoice may be issued.',
+      'Do not interpret tax rules, approve rates, alter customer terms, or choose accounting treatment.',
+      'Do not invent purchase-order, service, delivery, or approval evidence to clear a billing deadline.',
+      'Route recipient or account changes through the customer-verification process before using them.'
+    ],
+    qualityHeading: 'Check the packet before billing review.',
+    quality: [
+      'Tie each draft line to the approved order, contract, service record, and applicable rate source.',
+      'Check required customer, period, destination, and support fields; separate missing data from an approved exception.',
+      'Sample corrections and repeat exceptions so instructions improve without silently changing policy.'
+    ],
+    faq: [
+      { q: 'Can the specialist send or approve an invoice?', a: 'No. The specialist prepares the draft and evidence packet; the authorized billing owner approves and issues the invoice.' },
+      { q: 'What happens when the order and rate source conflict?', a: 'Preserve both references, identify the exact conflict, and route it to the owner instead of selecting a value.' },
+      { q: 'Which sources are used to prepare a draft?', a: 'Only client-approved order, contract, service, delivery, customer, and billing-instruction records defined in the workflow.' }
+    ]
+  },
+  'cash-application-support': {
+    problemHeading: 'Receipts remain unresolved when remittance and invoice evidence diverge.',
+    outcomeHeading: 'Receipts that stay traceable.',
+    outcome: 'The cash application owner sees each receipt linked to its bank or lockbox source and remittance, while unmatched amounts and uncertain payer evidence remain separate.',
+    workflowHeading: 'Move from receipt capture to proposed allocation review.',
+    workflow: [
+      'Capture the receipt identifier, amount, value date, payer evidence, and original bank or lockbox source.',
+      'Attach remittance advice and compare only against invoice references allowed by the written matching rules.',
+      'Record proposed allocations separately from unmatched amounts, fees, short payments, and conflicting candidates.',
+      'Send the evidence packet to the authorized posting owner and record the accepted disposition or follow-up.'
+    ],
+    boundaries: [
+      'Prepare and reconcile proposals; only authorized finance staff apply cash or post journal entries.',
+      'Never force a match because an amount or customer name looks familiar or the queue is aging.',
+      'Do not approve refunds, write-offs, bank changes, or adjustments to customer balances.',
+      'Route unidentified, duplicate, reversed, or conflicting receipts with the original source preserved.'
+    ],
+    qualityHeading: 'Tie every proposal back to the original receipt.',
+    quality: [
+      'Reconcile proposed allocations and remaining balances to the bank or lockbox amount.',
+      'Keep payer, remittance, invoice candidates, tolerance rule, and reviewer visible on the same record.',
+      'Sample unmatched and reversed items as well as clean applications to expose weak matching rules.'
+    ],
+    faq: [
+      { q: 'Can the specialist post or apply customer cash?', a: 'No. The role prepares the evidence and proposed allocation; an authorized finance owner retains posting approval.' },
+      { q: 'How are partial payments handled?', a: 'Record the received amount, linked remittance, supported invoice candidates, and remaining difference separately for review.' },
+      { q: 'What if remittance advice is missing?', a: 'Keep the receipt in an unmatched state, record the missing evidence, assign an owner, and follow the approved research path.' }
+    ]
+  },
+  'aging-report-preparation': {
+    problemHeading: 'An aging export is not an action queue until ownership is reconciled.',
+    outcomeHeading: 'An aging view that points to the next action.',
+    outcome: 'Finance receives a dated aging view that connects each balance to its source, current owner, next action, and unresolved exception.',
+    workflowHeading: 'Turn a frozen aging snapshot into reviewable next actions.',
+    workflow: [
+      'Use the approved report version, as-of date, population, and aging-bucket definitions.',
+      'Reconcile report totals to the approved ledger or source extract and record any variance.',
+      'Check owner, status, dispute, and next-action fields; flag stale or unsupported balances.',
+      'Route ownerless accounts, material variances, and policy questions to the accountable finance or collections lead.'
+    ],
+    boundaries: [
+      'Prepare operational aging views; the finance owner determines collectability and accounting treatment.',
+      'Do not change due dates, balances, reserve assumptions, credit holds, or write-off status.',
+      'Do not infer a next action from a balance alone or promise a customer outcome.',
+      'Preserve the report date, source version, filters, and limitations alongside the view.'
+    ],
+    qualityHeading: 'Make the aging view traceable to its snapshot.',
+    quality: [
+      'Verify the as-of date, population, aging bands, totals, and source version before distribution.',
+      'Keep unassigned, disputed, unapplied, stale, and unsupported items in distinct visible states.',
+      'Sample balances back to source records and document any corrected owner or status fields.'
+    ],
+    faq: [
+      { q: 'Can the specialist recommend who should collect an account?', a: 'The specialist can prepare owner and status fields from the approved map; the collections or finance lead assigns responsibility and decides strategy.' },
+      { q: 'What if the aging total does not tie to the ledger?', a: 'Keep the variance visible, record the source and report versions, and route it for reconciliation rather than changing the total.' },
+      { q: 'Can an aging report determine a bad-debt reserve?', a: 'No. The role prepares traceable operational data; qualified accounting owners make reserve and financial-statement judgments.' }
+    ]
+  },
+  'collections-coordination': {
+    problemHeading: 'Follow-up becomes risky when messages, preferences, and exceptions lose context.',
+    outcomeHeading: 'Follow-up the owner can reconstruct.',
+    outcome: 'Collections owners can see which approved message was used, the customer response as stated, current contact preferences, and the next review date.',
+    workflowHeading: 'Coordinate approved follow-up without taking over the decision.',
+    workflow: [
+      'Confirm account scope, approved contact channel, preference record, message version, and follow-up date.',
+      'Prepare the queue and send only the client-approved template through an authorized channel.',
+      'Record the exact response, promise conditions, dispute, request, date, and source without paraphrasing away meaning.',
+      'Pause routine follow-up on disputes, sensitive requests, or changed commitments and route them to the named owner.'
+    ],
+    boundaries: [
+      'Coordinate approved messages; authorized staff set collection strategy, negotiate terms, and approve concessions.',
+      'Do not make legal threats, promise waivers, change payment terms, or describe an account as resolved without evidence.',
+      'Honor the documented contact preference and route requests that change channel, scope, or identity.',
+      'Stop the sequence when a dispute, bankruptcy notice, legal request, or other policy trigger appears.'
+    ],
+    qualityHeading: 'Keep each contact inside the approved sequence.',
+    quality: [
+      'Verify the current message version, account scope, and contact preference before use.',
+      'Record actual contact time, channel, response, conditions, and next action without adding a promise.',
+      'Sample stopped sequences and routed exceptions as well as completed reminders.'
+    ],
+    faq: [
+      { q: 'Can the specialist negotiate payment terms?', a: 'No. The specialist records customer statements and coordinates approved follow-up; an authorized owner decides terms or concessions.' },
+      { q: 'How should a promise to pay be recorded?', a: 'Capture the customer’s wording, amount, conditions, date, source, and follow-up owner without converting it into a guarantee.' },
+      { q: 'What happens when a customer disputes an invoice?', a: 'Pause the routine sequence, preserve the exact statement and evidence, and route the case to the dispute or finance owner.' }
+    ]
+  },
+  'dispute-documentation': {
+    problemHeading: 'Dispute resolution slows when claims and supporting records are fragmented.',
+    outcomeHeading: 'Evidence organized for a human decision.',
+    outcome: 'Commercial and finance decision-makers receive one indexed packet connecting the customer claim to the invoice, order, fulfillment, correspondence, and missing evidence.',
+    workflowHeading: 'Build a dispute packet that preserves the source trail.',
+    workflow: [
+      'Capture the customer statement, disputed amount, invoice, date, channel, and current owner.',
+      'Link approved order, service, fulfillment, delivery, receipt, and prior correspondence records.',
+      'Index missing, conflicting, or superseded evidence without deciding which account is correct.',
+      'Route a bounded decision request to the authorized commercial or finance owner and record the disposition.'
+    ],
+    boundaries: [
+      'Organize evidence and track requests; the authorized owner decides dispute validity and any remedy.',
+      'Do not approve credits, write-offs, deductions, accounting changes, or customer commitments.',
+      'Preserve original statements and corrections; do not replace a conflict with a single preferred version.',
+      'Escalate legal, tax, delivery, safety, or contract interpretation to the designated qualified owner.'
+    ],
+    qualityHeading: 'Give reviewers a complete, indexed evidence packet.',
+    quality: [
+      'Link each artifact to its customer, invoice, source, date, and relevant claim point.',
+      'Keep missing evidence, customer assertions, internal records, and disputed values clearly distinguished.',
+      'Confirm the packet records the decision owner, request, status, and next response date.'
+    ],
+    faq: [
+      { q: 'Can the specialist decide whether a deduction is valid?', a: 'No. The specialist assembles the customer claim and supporting records for the authorized commercial or finance owner.' },
+      { q: 'What if the packet is incomplete?', a: 'List the exact missing item and its source owner, then leave the dispute open until the reviewer can assess it.' },
+      { q: 'Can support send a customer response?', a: 'Only approved acknowledgments or document requests within the written communication boundary; resolution language stays with the decision owner.' }
+    ]
+  },
+  'customer-account-maintenance': {
+    problemHeading: 'Customer records drift when changes lack verification and ownership.',
+    outcomeHeading: 'Customer changes with a clear audit trail.',
+    outcome: 'Billing teams receive a traceable change record showing the request source, permitted field, before-and-after values, verification, approver, and effective date.',
+    workflowHeading: 'Verify the request before preparing an account update.',
+    workflow: [
+      'Capture the customer key, requested field, current value, request source, and named approver.',
+      'Verify the request through a known, approved channel independent of the change request itself.',
+      'Update only fields listed in the role permissions and retain before-and-after evidence.',
+      'Confirm the destination record and route bank, tax, credit, identity, or conflicting changes through their separate controls.'
+    ],
+    boundaries: [
+      'Maintain only the customer fields expressly permitted by the client’s written access map.',
+      'Do not change bank instructions, credit limits, payment terms, tax status, or legal identity without an independent approval process.',
+      'Do not verify a sensitive request using only contact details supplied in that same request.',
+      'Preserve the prior value and audit history; never overwrite a required change record.'
+    ],
+    qualityHeading: 'Keep every account change independently reviewable.',
+    quality: [
+      'Confirm the request source, known-channel verification, approver, effective date, and permitted field.',
+      'Compare the saved destination value with the approved request and preserve the previous value.',
+      'Sample sensitive or conflicting requests to verify that they were stopped and routed correctly.'
+    ],
+    faq: [
+      { q: 'Can the specialist change bank details?', a: 'No. Banking changes require the client’s separate authorization and independent verification procedure.' },
+      { q: 'How is a billing contact change verified?', a: 'Use a known contact path already on file, then record who verified the request, when, and through which approved channel.' },
+      { q: 'Which customer fields can be maintained?', a: 'Only the non-sensitive fields listed in the client’s written role permissions; unclear or high-risk fields are routed for review.' }
+    ]
+  }
+};
+
 const service = (data: Pick<Service, 'slug' | 'name' | 'short' | 'audience' | 'problem' | 'scope' | 'inputs' | 'outputs' | 'scenarios' | 'related'>): Service => ({
   ...data,
-  workflow: [
-    'Confirm the approved queue, source systems, owner, and completion standard.',
-    'Prepare or update the record using only authorized sources and statuses.',
-    'Separate complete items from missing, conflicting, or sensitive exceptions.',
-    'Send review-ready work to the named owner and record the accepted disposition.'
-  ],
-  boundaries: [
-    'Authorized finance leaders retain accounting judgment, approvals, policy, credit decisions, and payment control.',
-    'The specialist does not move money, change bank details, approve refunds or write-offs, provide legal advice, or conceal uncertainty.',
-    'Unexpected instructions, conflicting evidence, and work outside the written rule stop for human review.'
-  ],
-  quality: [
-    'Use an acceptance checklist that covers required fields, source links, status, owner, and next action.',
-    'Sample routine and exception work, preserve corrections, and update the procedure when patterns appear.',
-    'Apply least-privilege access and keep customer and payment data in approved systems.'
-  ],
-  faq: [
-    { q: 'What remains with our finance team?', a: 'Your authorized team retains approvals, accounting treatment, credit and collections strategy, payment movement, policy, and sensitive customer decisions.' },
-    { q: 'Can the role use our current systems?', a: 'Yes, when access is approved and limited. The workflow brief identifies systems of record, permitted fields, evidence, and escalation rules.' },
-    { q: 'How should we start?', a: 'Start with one recurring queue, a small controlled batch, a named reviewer, and a written definition of complete.' }
-  ]
+  ...serviceDetails[data.slug]
 });
 
 export const site: SiteConfig = {

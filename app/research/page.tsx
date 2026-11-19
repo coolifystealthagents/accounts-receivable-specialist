@@ -23,7 +23,7 @@ export default async function ResearchPage({ searchParams }: ResearchPageProps) 
       <header className="research-index-hero">
         <div><p className="eyebrow">Research library</p><h1>Evidence for better operating questions.</h1><p>Review source-led briefs and proposed protocols for examining receivables workflows, evidence quality, handoffs, and role boundaries.</p></div>
         <div className="research-hero-visual" data-motion-image>
-          <Image src="/images/research-operations.svg" alt="Research workspace with financial source records, an analysis chart, and a review checklist" fill priority sizes="(max-width: 900px) 100vw, 48vw" />
+          <Image src="/images/home-receivables-review.jpg" alt="Finance professionals reviewing a receivables source document beside a laptop" fill priority sizes="(max-width: 900px) 100vw, 48vw" />
           <div className="research-control-ledger" aria-label="Research review ledger"><strong>Question</strong><span>Define the queue and observation</span><strong>Evidence</strong><span>Name sources and limitations</span><strong>Review</strong><span>Keep operating judgment with the owner</span></div>
         </div>
       </header>
