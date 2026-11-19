@@ -44,7 +44,7 @@ export function EditorialCardGrid({ items, title, description, kind }: Editorial
                   <time dateTime={item.publishedAt}>{displayArticleDate(item.publishedAt)}</time>
                   {item.readTime ? <span>{item.readTime}</span> : null}
                 </div>
-                <Link className="text-link" href={item.href}>{actionLabel} <span aria-hidden="true">â</span></Link>
+                <Link className="text-link" href={item.href}>{actionLabel} <span aria-hidden="true">&rarr;</span></Link>
               </div>
             </article>
           ))}
