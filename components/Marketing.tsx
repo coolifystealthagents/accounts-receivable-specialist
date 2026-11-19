@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { site } from '@/lib/site';
 import { blogPosts } from '@/lib/content';
-import { ArrowIcon, CheckIcon, SparkIcon } from './Icons';
+import { ArrowIcon, CheckIcon, SparkIcon, DefineIcon, DelegateIcon, ImproveIcon } from './Icons';
 
 const CTA = ({ id, children }: { id: string; children: React.ReactNode }) => <Link id={id} className="button primary" href="/contact-us">{children} <ArrowIcon /></Link>;
 
@@ -39,8 +39,25 @@ export function HomePage() {
       </div>
     </section>
     <section className="section services"><div className="section-heading"><p className="eyebrow">Roles that fit the work</p><h2>Choose the support your team can actually use.</h2></div><ServiceCards /></section>
-    <section className="section method"><div className="method-art" aria-hidden="true"><span>Define</span><span>Delegate</span><span>Improve</span></div><div><p className="eyebrow">A useful working model</p><h2>Define. Delegate. Improve.</h2><p>Start with the recurring work that already has an owner, a standard, and a clear escalation path. Then create a small review loop that makes the handoff stronger over time.</p><ol><li><strong>Define the boundary.</strong> Separate preparation and coordination from licensed or executive judgment.</li><li><strong>Document the handoff.</strong> Set inputs, output format, review points, and exception rules.</li><li><strong>Improve with evidence.</strong> Review a focused sample and update the process when patterns emerge.</li></ol><CTA id="cta-home-method-consultation">Plan a free consultation</CTA></div></section>
+    <section className="section method" aria-labelledby="home-method-title">
+      <div className="method-visual" data-motion-image>
+        <Image src="/images/receivables-workflow.svg" alt="Finance workspace with a receivables dashboard, invoice records, and payment tracking" fill sizes="(max-width: 900px) 100vw, 48vw" />
+      </div>
+      <div>
+        <p className="eyebrow">A useful working model</p><h2 id="home-method-title">Define. Delegate. Improve.</h2>
+        <p>Start with the recurring work that already has an owner, a standard, and a clear escalation path. Then create a small review loop that makes the handoff stronger over time.</p>
+        <ul className="method-steps">
+          <li><span className="method-step-icon"><DefineIcon /></span><span><strong>Define the boundary.</strong> Separate preparation and coordination from licensed or executive judgment.</span></li>
+          <li><span className="method-step-icon"><DelegateIcon /></span><span><strong>Document the handoff.</strong> Set inputs, output format, review points, and exception rules.</span></li>
+          <li><span className="method-step-icon"><ImproveIcon /></span><span><strong>Improve with evidence.</strong> Review a focused sample and update the process when patterns emerge.</span></li>
+        </ul>
+        <CTA id="cta-home-method-consultation">Plan a free consultation</CTA>
+      </div>
+    </section>
     <section className="section journal"><div className="section-heading"><p className="eyebrow">Field notes</p><h2>Practical guidance for better delegation.</h2></div><Latest /></section>
-    <section className="closing"><p className="eyebrow">Make room for the work only you can do</p><h2>Let us map your first specialist support role.</h2><p>A focused conversation can turn scattered tasks into a clear, reviewable role brief.</p><CTA id="cta-home-closing-schedulecall">Schedule a free call</CTA></section>
+    <section className="closing role-planning-closing">
+      <div className="closing-copy"><p className="eyebrow">Make room for the work only you can do</p><h2>Let us map your first specialist support role.</h2><p>A focused conversation can turn scattered tasks into a clear, reviewable role brief.</p><CTA id="cta-home-closing-schedulecall">Schedule a free call</CTA></div>
+      <div className="closing-image" data-motion-image><Image src="/images/first-role-map.svg" alt="Finance workflow planning board linking invoice preparation, payment records, and review ownership" fill sizes="(max-width: 900px) 100vw, 42vw" /></div>
+    </section>
   </main>;
 }
