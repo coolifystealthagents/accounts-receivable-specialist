@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { displayArticleDate } from '@/lib/article';
 import { blogPosts } from '@/lib/content';
+import { EditorialCardGrid } from '@/components/EditorialCardGrid';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -11,9 +11,14 @@ export const metadata: Metadata = {
   openGraph: { title: 'Blog | Accounts Receivable Specialist', description: 'Practical field notes for reviewable accounts receivable workflows.', images: ['/images/blog-receivables-analysis.jpg'] },
 };
 
-export default function BlogPage() {
+type BlogPageProps = { searchParams: Promise<{ [key: string]: string | string[] | undefined }> };
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
   const categories = [...new Set(blogPosts.map((post) => post.category))];
-  const [featured, ...remaining] = blogPosts;
+  const params = await searchParams;
+  const requestedCategory = Array.isArray(params.category) ? params.category[0] : params.category;
+  const selectedCategory = requestedCategory && categories.includes(requestedCategory) ? requestedCategory : '';
+  const filteredPosts = selectedCategory ? blogPosts.filter((post) => post.category === selectedCategory) : blogPosts;
   return (
     <main className="editorial-library blog-library">
       <header className="index-photo-hero">
@@ -23,23 +28,23 @@ export default function BlogPage() {
 
       <section className="library-compass" aria-labelledby="blog-library">
         <div><p className="eyebrow">How to use this library</p><h2 id="blog-library">Start with the workflow that creates the most uncertainty.</h2></div>
-        <div><p>Choose a topic, compare its suggested inputs and review points with your current process, then document one small handoff to test. The articles are practical planning material, not accounting, legal, or credit advice.</p><div className="topic-ruler" aria-label="Blog topics"><span>All topics ({blogPosts.length})</span>{categories.map((category) => <span key={category}>{category} ({blogPosts.filter((post) => post.category === category).length})</span>)}</div></div>
+        <div><p>Choose a topic, compare its suggested inputs and review points with your current process, then document one small handoff to test. The articles are practical planning material, not accounting, legal, or credit advice.</p></div>
       </section>
 
-      {featured ? <section className="featured-editorial">
-        <div className="featured-image" data-motion-image><Image src={featured.thumbnail!} width={1200} height={630} alt={`${featured.title} article cover`} /></div>
-        <div><p className="eyebrow">Latest field note</p><span className="editorial-kicker">{featured.category} · {displayArticleDate(featured.publishedAt)} · {featured.readTime}</span><h2><Link href={`/blog/${featured.slug}`}>{featured.title}</Link></h2><p>{featured.description}</p><Link className="text-link" href={`/blog/${featured.slug}`}>Read the latest guide →</Link></div>
-      </section> : null}
-
-      <section className="editorial-ledger" aria-labelledby="all-blog-guides">
-        <header><div><p className="eyebrow">Field-note ledger</p><h2 id="all-blog-guides">Browse every practical guide</h2></div><p>Scan by topic, question, or publication date. Each row leads to a complete article with a visible contents guide and related service path.</p></header>
-        <div className="editorial-row-list">
-          {remaining.map((post) => <article className="editorial-row" key={post.slug}>
-            <div><span className="editorial-kicker">{post.category}</span><h3><Link href={`/blog/${post.slug}`}>{post.title}</Link></h3><p>{post.description}</p></div>
-            <div className="row-meta"><time dateTime={post.publishedAt}>{displayArticleDate(post.publishedAt)}</time><span>{post.readTime}</span><Link href={`/blog/${post.slug}`}>Read article →</Link></div>
-          </article>)}
+      <nav className="category-filter" aria-label="Blog categories">
+        <p className="category-filter-label">Browse by topic</p>
+        <div className="category-filter-options">
+          <Link className={`category-chip${selectedCategory ? '' : ' is-active'}`} href="/blog" aria-current={selectedCategory ? undefined : 'page'}>All topics <span>({blogPosts.length})</span></Link>
+          {categories.map((category) => <Link className={`category-chip${selectedCategory === category ? ' is-active' : ''}`} href={`/blog?category=${encodeURIComponent(category)}`} aria-current={selectedCategory === category ? 'page' : undefined} key={category}>{category} <span>({blogPosts.filter((post) => post.category === category).length})</span></Link>)}
         </div>
-      </section>
+      </nav>
+
+      <EditorialCardGrid
+        kind="blog"
+        title="Browse every practical guide"
+        description="Scan by topic, question, or publication date. Each guide includes clear review points and a related specialist workflow."
+        items={filteredPosts.map((post) => ({ slug: post.slug, title: post.title, summary: post.description, topic: post.category, publishedAt: post.publishedAt, readTime: post.readTime, image: post.thumbnail ?? '/article-ledger.svg', href: `/blog/${post.slug}` }))}
+      />
 
       <section className="closing index-closing"><div><p className="eyebrow">Choose a practical starting point</p><h2>Map one queue before expanding the role.</h2></div><div><p>Bring the source records, current owner, expected output, and exceptions. We can help you frame a controlled specialist workflow.</p><Link className="button primary" href="/contact-us">Book a free consultation</Link></div></section>
     </main>
