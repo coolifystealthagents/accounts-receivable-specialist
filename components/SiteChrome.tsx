@@ -13,7 +13,7 @@ function ParentBrand({ inverse = false }: { inverse?: boolean }) {
 export function Header() {
   return <header className="site-header">
     <Link className="brand" href="/" aria-label={`${site.name} home`}><Image src="/logo.svg" alt="" width={38} height={38} /><span>{site.name}</span></Link>
-    <nav aria-label="Primary navigation">{nav.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav>
+    <nav aria-label="Primary navigation">{nav.map(item => <Link className={item.href === '/contact-us' ? 'nav-cta' : undefined} key={item.href} href={item.href}>{item.label}</Link>)}</nav>
     <ParentBrand />
   </header>;
 }

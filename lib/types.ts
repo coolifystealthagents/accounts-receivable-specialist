@@ -6,12 +6,17 @@ export type Service = {
   short: string;
   audience: string;
   problem: string;
+  problemHeading: string;
+  outcomeHeading: string;
+  outcome: string;
   scope: string[];
   inputs: string[];
   workflow: string[];
+  workflowHeading: string;
   outputs: string[];
   boundaries: string[];
   quality: string[];
+  qualityHeading: string;
   scenarios: { title: string; detail: string }[];
   faq: ServiceFAQ[];
   related: string[];

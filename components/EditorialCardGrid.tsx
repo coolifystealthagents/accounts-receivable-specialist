@@ -37,7 +37,7 @@ export function EditorialCardGrid({ items, title, description, kind }: Editorial
                 <Image src={item.image} alt="" fill sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" />
               </Link>
               <div className="editorial-card-content">
-                <span className="editorial-kicker">{item.topic}{item.status ? ` Â· ${item.status}` : ''}</span>
+                <span className="editorial-kicker">{item.topic}{item.status ? ` · ${item.status}` : ''}</span>
                 <h3><Link href={item.href}>{item.title}</Link></h3>
                 <p>{item.summary}</p>
                 <div className="editorial-card-meta">

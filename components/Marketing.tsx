@@ -41,7 +41,7 @@ export function HomePage() {
     <section className="section services"><div className="section-heading"><p className="eyebrow">Roles that fit the work</p><h2>Choose the support your team can actually use.</h2></div><ServiceCards /></section>
     <section className="section method" aria-labelledby="home-method-title">
       <div className="method-visual" data-motion-image>
-        <Image src="/images/receivables-workflow.svg" alt="Finance workspace with a receivables dashboard, invoice records, and payment tracking" fill sizes="(max-width: 900px) 100vw, 48vw" />
+        <Image src="/images/services-workflow-review.jpg" alt="Two finance professionals reviewing receivables reports together at a laptop" fill sizes="(max-width: 900px) 100vw, 48vw" />
       </div>
       <div>
         <p className="eyebrow">A useful working model</p><h2 id="home-method-title">Define. Delegate. Improve.</h2>
@@ -57,7 +57,7 @@ export function HomePage() {
     <section className="section journal"><div className="section-heading"><p className="eyebrow">Field notes</p><h2>Practical guidance for better delegation.</h2></div><Latest /></section>
     <section className="closing role-planning-closing">
       <div className="closing-copy"><p className="eyebrow">Make room for the work only you can do</p><h2>Let us map your first specialist support role.</h2><p>A focused conversation can turn scattered tasks into a clear, reviewable role brief.</p><CTA id="cta-home-closing-schedulecall">Schedule a free call</CTA></div>
-      <div className="closing-image" data-motion-image><Image src="/images/first-role-map.svg" alt="Finance workflow planning board linking invoice preparation, payment records, and review ownership" fill sizes="(max-width: 900px) 100vw, 42vw" /></div>
+      <div className="closing-image" data-motion-image><Image src="/images/blog-receivables-analysis.jpg" alt="A finance professional reviewing a receivables report with a pen" fill sizes="(max-width: 900px) 100vw, 42vw" /></div>
     </section>
   </main>;
 }
