@@ -7,7 +7,7 @@ export function ReviewMarquee() {
       <p className="eyebrow" id="reviews-title">StealthAgents reviews</p>
       <p>First party testimonials published on the official Stealth Agents website.</p>
     </div>
-    <div className="review-window" tabIndex={0} aria-label="Stealth Agents client reviews. Focus or hover to pause.">
+    <div className="review-window" tabIndex={0} aria-label="Stealth Agents client reviews. Focus to pause.">
       <div className="review-track">
         {[...reviews, ...reviews].map((review, index) => <blockquote className="review" key={`${review.name}-${index}`} aria-hidden={index >= reviews.length}>
           <div className="stars" aria-label="Five out of five stars">★★★★★</div>
